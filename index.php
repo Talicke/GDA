@@ -1,7 +1,7 @@
 <?php
 
     include "./view/view_header.html";
-    include "./view/view_accueil.html";
+    // include "./view/view_accueil.html";
 
     //session start
     session_start();
@@ -16,7 +16,8 @@
         header('Location: ./reglages');
     }
 
-    var_dump($path);
+
+
     /*------------------------------------------------
                         ROUTEUR
     ------------------------------------------------*/
@@ -24,8 +25,12 @@
     switch($path){
         
         case $path === '/reglages' : 
-            // include './ctrl/ctrl_reglages.php';
-                break ;
+            include './ctrl/ctrl_reglages.php';
+            break ;
+
+                case $path === '/' : 
+                    include "./view/view_accueil.html";
+                    break ;
     }
 
 ?>

@@ -89,7 +89,12 @@ textarea:hover{
     font-size: 1.3em;
 }
 
-nav{
+.submit-button:hover{
+    background-color: #8E99C3;
+    color:#212529;
+}
+
+.nav-princ{
     grid-column: 2;
     grid-row: 1 /2;
     position: relative;
@@ -145,7 +150,7 @@ nav{
 .onglet1{
     position: fixed;
     z-index: 2;
-}
+} 
 
 .onglet2{
     position:fixed;

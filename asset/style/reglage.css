@@ -1,11 +1,64 @@
+.regl-form{
+    grid-row: 2;
+    grid-column: 1;
+    margin-top: 48px;
+    width: 90vw;
+    height: 60vh;
+    background-color: #212529;
+    border: 3px solid #394984;
+    color: white;
+    border-radius: 15px;
+    margin: auto;
+    margin-top: 48px;
+}
 .bouton-regl{
     background-color: #212529;
     width: 150px;
     height:50px;
     border: 2px solid #394984;
     border-radius: 5px 30px 5px 5px;
+    color: white;
+    box-shadow: 4px 0px #00000040;
+}
+
+.bouton-regl:hover{
+    background-color: #394984;
+    width: 150px;
+    height:50px;
+    border: 2px solid #212529;
+    border-radius: 5px 30px 5px 5px;
+    color: white;
+    box-shadow: 4px 0px #00000040;
 }
 
 .nav-regl{
     background-color: #333333;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: row;
+}
+
+#ong-regl-note{
+    position:fixed;
+    z-index: 4;
+    margin-left: 100px;
+}
+
+#ong-regl-tache{
+    position: fixed;
+    z-index: 3;
+    margin-left: 220px;
+}
+
+#ong-regl-rappel{
+    position: fixed;
+    z-index: 2;
+    margin-left: 340px;
+}
+
+#ong-regl-RDV{
+    position: fixed;
+    z-index: 1;
+    margin-left: 460px;
 }
