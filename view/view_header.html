@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>Acceuil</title>
 </head>
 
@@ -14,14 +15,13 @@
 </header>
 
 <body>
-
-    <nav class="class-princ">
+    <nav class="nav-princ hidden">
         <div class="navbar-sup">
             <button type="submit" class="onglet-up onglet1">Compte</button>
             <button type="submit" class="onglet-up onglet2">Activités</button>
             <button type="submit" class="onglet-up onglet3">Projets</button>
         </div>
-        <button type="submit" class="nav-compte-mid onglet4">+</button>
+        <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
         <div class="navbar-down">
             <button type="submit" class="onglet-down onglet5">Notes</button>
             <button type="submit" class="onglet-down onglet6">Taches</button>
@@ -29,3 +29,17 @@
             <button type="submit" class="onglet-down onglet8">RDV</button>
         </div>
     </nav>
+
+    <nav class="nav-princ collapse">
+        <div class="navbar-sup-collapse">
+            <button type="submit" class="onglet-up onglet1" id="Mcompte">menu compte</button>
+        </div>
+        <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
+        <div class="navbar-down collapse">
+            <button type="submit" class="onglet-down" id="onglet-liste">liste</button>
+        </div>
+    </nav>
+
+    <script src="./asset/script/navbar.js"> 
+
+    </script>

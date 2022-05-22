@@ -14,4 +14,6 @@
     }else{
         include './ctrl/ctrl_reglage_note.php';
     }
+    echo '</form>';
+    echo ' <button type="submit" name="valider" class="submit-button">Valider</button>';
 ?>
