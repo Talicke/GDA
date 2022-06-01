@@ -1,8 +1,8 @@
-<div>
-<form action="" method="post" class="">
+
     <div class="form-regl-sup">
         <div class="dropdown">
             <h3>Activités :</h3>
+            <form action="" method="post" class="">
             <select name="activite" id="select-acti">
                 <option value="aucune">Choisissez une activité</option>
                 <option value="acti-choix1">choix 1</option>
@@ -24,16 +24,21 @@
         <button type="submit" class="btn-med btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
         <button type="submit" class="btn-med btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
     </div>
-        <textarea name="modifNote" placeholder="Ecrivez une note" id="modifTache"></textarea>
+        <textarea name="modifTache" placeholder="Ecrivez une note" id="modifTache"></textarea>
 </form>
-</div>
 
     <div id="histo-tache">
         <h3>Historique :</h3>
         <div id="conteneur-histo">
             <div class="itération">
-                <p><span class="date-histo">le: 01/01/2022</span><span class="heure-histo">de: 12h à 14h</span></p>
+                <p>le: 01/01/2022</p>
+                <p>de: 12h à 14h</p>
             </div>
         </div>
-
+    </div>
+    
+    <div id="new-iter">
+        <form action="" method="post">
+            <button type="submit" class="" name="new_iter" id="new_iter">Nouvelle itération</button>
+        </form>
     </div>

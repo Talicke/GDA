@@ -1,27 +1,13 @@
-console.log('hello');
-
-let menuSupClose = `<button type="submit" class="onglet-up onglet1" id="Mcompte">menu compte</button>`
-
-let menuSupOpen =`
-    <button type="submit" class="onglet-up onglet1">Compte</button>
-    <button type="submit" class="onglet-up onglet2">Activités</button>
-    <button type="submit" class="onglet-up onglet3">Projets</button>`
-
-let opened = false
-
-
-let elemt = document.querySelector(".navbar-sup-collapse");
-console.log(elemt);
-
-elemt.innerHTML = menuSupClose;
-
-elemt.addEventListener("mouseover", function(event) {
-    if(event){
-        elemt.innerHTML = menuSupOpen;
-        // opened = true
-    }else if (!event){
-        elemt.innerHTML = menuSupClose;
-        // opened = false
-    }
-    
-})
+function extendNav(leaveMenu, showMenu, nav, sizeH, sizeL){
+    let elemNav = document.querySelector(`${nav}`);
+    let elemShow = document.querySelector(`${showMenu}`)
+    let elemHide = document.querySelector(`${leaveMenu}`)
+    elemShow.addEventListener("mouseenter", function(){
+        elemNav.style.height = sizeL;
+        elemShow.style.height = "30px";
+    })
+    elemHide.addEventListener("mouseleave", function(){
+        elemNav.style.height = sizeH;
+        elemShow.style.height = "22vh";
+    })
+}

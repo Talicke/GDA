@@ -28,9 +28,9 @@
             include './ctrl/ctrl_reglages.php';
             break ;
 
-                case $path === '/' : 
-                    include "./view/view_accueil.html";
-                    break ;
+        case $path === '/' : 
+            include "./view/view_accueil.html";
+            break ;
     }
 
 ?>

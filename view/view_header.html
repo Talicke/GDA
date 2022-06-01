@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/style/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="./asset/script/navbar.js"></script>
     <title>Acceuil</title>
 </head>
 
@@ -15,7 +16,7 @@
 </header>
 
 <body>
-    <nav class="nav-princ hidden">
+    <nav class="nav-princ collapse-height">
         <div class="navbar-sup">
             <button type="submit" class="onglet-up onglet1">Compte</button>
             <button type="submit" class="onglet-up onglet2">Activités</button>
@@ -23,23 +24,36 @@
         </div>
         <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
         <div class="navbar-down">
-            <button type="submit" class="onglet-down onglet5">Notes</button>
-            <button type="submit" class="onglet-down onglet6">Taches</button>
-            <button type="submit" class="onglet-down onglet7">Rappel</button>
             <button type="submit" class="onglet-down onglet8">RDV</button>
+            <button type="submit" class="onglet-down onglet7">Rappel</button>
+            <button type="submit" class="onglet-down onglet6">Taches</button>
+            <button type="submit" class="onglet-down onglet5">Notes</button>
         </div>
     </nav>
 
-    <nav class="nav-princ collapse">
-        <div class="navbar-sup-collapse">
-            <button type="submit" class="onglet-up onglet1" id="Mcompte">menu compte</button>
+    <nav class="nav-princ hidden-height">
+        <div id="navbar-sup-collapse">
+            <button type="submit" class="onglet-up onglet-collapse-sup" id="Mcompte"><i class="fa-solid fa-bars"></i></button>
+            <div class="navbar-sup" id="extend-nav-sup">
+                <button type="submit" class="onglet-up onglet1">Compte</button>
+                <button type="submit" class="onglet-up onglet2">Activités</button>
+                <button type="submit" class="onglet-up onglet3">Projets</button>
+            </div>
         </div>
         <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
-        <div class="navbar-down collapse">
-            <button type="submit" class="onglet-down" id="onglet-liste">liste</button>
+        <div id="navbar-down-collapse">
+            <button type="submit" class="onglet-down onglet-collapse-down" id="Mliste"><i class="fa-solid fa-bars"></i></button>
+            <div class="navbar-down" id="extend-nav-down">
+                <button type="submit" class="onglet-down onglet8">RDV</button>
+                <button type="submit" class="onglet-down onglet7">Rappel</button>
+                <button type="submit" class="onglet-down onglet6">Taches</button>
+                <button type="submit" class="onglet-down onglet5">Notes</button>
+            </div>
         </div>
     </nav>
 
-    <script src="./asset/script/navbar.js"> 
 
+    <script>
+        extendNav('#navbar-sup-collapse','#Mcompte','#extend-nav-sup','15vh', '50vh');
+        extendNav('#navbar-down-collapse','#Mliste','#extend-nav-down','15vh', '60vh');
     </script>
