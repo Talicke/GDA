@@ -1,7 +1,7 @@
 <?php
 
     echo "<div class='regl-form regl-rappel'>";
-    echo "Vous etes dans les rappels";
+    include "./view/view_reglage_rappel.html";
     echo "</div>"
 
 ?>
