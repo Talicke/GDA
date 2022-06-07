@@ -1,3 +1,38 @@
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="./asset/style/reglage.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+    <script>
+
+    $( function() {
+        $( "#datepicker" ).datepicker({
+            dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
+            monthNames: [ "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ],
+            monthNamesShort: [ "Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec" ],
+            changeMonth: true,
+            changeYear: true,
+            gotoCurrent: true
+        });
+    } );
+
+    $(document).ready(function(){
+        $('input.timepicker').timepicker({
+            timeFormat: 'HH:mm ',
+            interval: 15,
+            minTime: '00',
+            maxTime: '23:59pm',
+            defaultTime: 'now',
+            startTime: '00:00am',
+            dynamic: false,
+            dropdown: true,
+            scrollbar: false
+        });
+    });
+</script>
+
 <div class="form-regl-sup">
     <div class="dropdown">
         <h3>Activités :</h3>
@@ -23,4 +58,16 @@
     <button type="submit" class="btn-med btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
     <button type="submit" class="btn-med btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
 </div>
-    <textarea name="modifNote" placeholder="Ecrivez une note" id="modifNote"></textarea>
+    <textarea name="modifRappel" placeholder="Ecrivez une note" id="modifRappel"></textarea>
+
+<div class="datepicker-container">
+    <div id="datepicker"></div>
+</div>
+
+<div class="timepicker-container">
+    <div class="timepicker-subcontainer">
+        <input class="timepicker"></input>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>

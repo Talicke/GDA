@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Neucha&display=swap');
+
 .regl-form{
     grid-row: 2;
     grid-column: 1;
@@ -14,6 +17,10 @@
     margin: auto;
     margin-top: 48px;
     padding: 1%;
+}
+
+.regl-rappel{
+    align-items: center;
 }
 
 .bouton-regl{
@@ -161,6 +168,21 @@ select{
     margin-bottom: 2%;
 }
 
+#modifRappel{
+    grid-column: 1;
+    grid-row: 2 ;
+    background-color: #CDD0D2;
+    border-radius: 15px;
+    resize: none;
+    width: 95%;
+    height: 40vh;
+    font-size: 2em;
+    font-family: 'Neucha', cursive;
+    box-shadow: inset 0px 4px 4px #00000040;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
 #histo-tache{
     grid-column: 2;
     grid-row: 1 /span 2;
@@ -207,6 +229,119 @@ select{
 
 .dropdown{
     margin-left: 3%;
+}
+
+.datepicker-container{
+    grid-row: 1/span 2;
+    grid-column: 2;
+}
+#datepicker{
+    margin: auto;
+}
+
+.ui-widget.ui-widget-content{
+    margin:auto auto;
+    border-radius: 10%;
+    padding:2%;
+    padding-top: 4%;
+    width: 85%;
+    background-color: #CDD0D2;
+}
+
+.ui-datepicker .ui-datepicker-title select{
+    font-family: 'Neucha', cursive;
+}
+
+thead{
+    font-size: 1em;
+}
+
+.ui-corner-all{
+    background-color: #CDD0D2;
+}
+
+.ui-datepicker .ui-datepicker-header{
+    background-color: #394984;
+    border: 2px solid #333333;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    background-color: #394984;
+    border: 1px solid #212529;
+    color: #CDD0D2;
+    
+}
+
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {
+	color: #CDD0D2;
+	text-decoration: none;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #8E99C3;
+	background: #8E99C3;
+	font-weight: normal;
+	color: #CDD0D2;
+}
+
+.ui-state-default{
+    display: flex;
+    border: 2px solid #212529;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 1em;
+    background-color: #394984;
+}
+
+.timepicker-container{
+    grid-row: 3;
+    grid-column: 2;
+}
+
+.timepicker {
+    background-color: #394984;
+    border: 3px solid #333333;
+    border-radius: 10px;
+    text-align: center;
+    color:#CDD0D2;
+    font-size: 1.5em;
+    margin: auto;
+    width: 75%;
+}
+
+.ui-menu-item .ui-corner-all{
+    background-color: #394984;
+    color: #CDD0D2;
+    margin: 10px;
+    border: 2px solid #212529;
+}
+
+.ui-timepicker-container{
+    border:none !important;
+    background-color: #CDD0D2 !important;
+    height: 18% !important;
+    width: 10% !important;
+}
+
+.timepicker-subcontainer{
+    margin: auto;
+    background-color: #C10000;
+    width: 80%;
+    height: 50%;
 }
 
 @media screen and (max-width: 900px){
