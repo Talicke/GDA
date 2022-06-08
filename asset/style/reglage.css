@@ -312,15 +312,15 @@ a.ui-button:active,
     grid-column: 2;
 }
 
-.timepicker {
+.timepicker, .timepicker1heures, .timepicker1minutes {
     background-color: #394984;
     border: 3px solid #333333;
     border-radius: 10px;
     text-align: center;
     color:#CDD0D2;
-    font-size: 1.5em;
+    font-size: 0.8em;
     margin: auto;
-    width: 75%;
+    width: 35%;
 }
 
 .ui-menu-item .ui-corner-all{
@@ -338,10 +338,16 @@ a.ui-button:active,
 }
 
 .timepicker-subcontainer{
-    margin: auto;
-    background-color: #C10000;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #CDD0D2;
     width: 80%;
     height: 50%;
+    padding: 2%;
+    border-radius: 10px;
+    color:#212529;
+    font-size: 2em;
 }
 
 @media screen and (max-width: 900px){
