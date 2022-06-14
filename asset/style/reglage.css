@@ -58,13 +58,13 @@
 #ong-regl-note{
     position:relative;
     z-index: 4;
-    margin-left: 10%;
+    margin-left: 27%;
 }
 
 #ong-regl-tache{
     position: relative;
     z-index: 3;
-    margin-left: -5%
+    margin-left: -10%
 }
 
 #ong-regl-rappel{
@@ -76,14 +76,12 @@
 #ong-regl-RDV{
     position: relative;
     z-index: 1;
-    margin-left: -15%;
+    margin-left: -10%;
 }
 
 .submit-button{
     grid-column: 1;
     grid-row: 3;
-    margin-top: 1.5%;
-    margin-left: 82vw;
 }
 
 .form-regl-sup{
@@ -404,5 +402,9 @@ a.ui-button:active,
 
     .form-regl-sup{
         justify-content: space-between;
+    }
+
+    #ong-regl-note{
+        margin-left: 10%;
     }
 }
