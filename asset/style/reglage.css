@@ -56,27 +56,27 @@
 }
 
 #ong-regl-note{
-    position:fixed;
+    position:relative;
     z-index: 4;
     margin-left: 10%;
 }
 
 #ong-regl-tache{
-    position: fixed;
+    position: relative;
     z-index: 3;
-    margin-left: 15%
+    margin-left: -5%
 }
 
 #ong-regl-rappel{
-    position: fixed;
+    position: relative;
     z-index: 2;
-    margin-left: 20%;
+    margin-left: -10%;
 }
 
 #ong-regl-RDV{
-    position: fixed;
+    position: relative;
     z-index: 1;
-    margin-left: 25%;
+    margin-left: -15%;
 }
 
 .submit-button{
@@ -401,17 +401,6 @@ a.ui-button:active,
         flex-direction: column;
     }
 
-    #ong-regl-tache{
-        margin-left: 20%;
-    }
-
-    #ong-regl-rappel{
-        margin-left: 30%;
-    }
-
-    #ong-regl-RDV{
-        margin-left: 40%;
-    }
 
     .form-regl-sup{
         justify-content: space-between;
