@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
 <link rel="stylesheet" href="./asset/style/reglage.css">
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
@@ -10,8 +12,10 @@
 $( function() {
     $( "#datepicker" ).datepicker({
         dayNamesMin: [ "Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa" ],
-        monthNames: [ "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin", "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ],
-        monthNamesShort: [ "Jan", "Fev", "Mar", "Avr", "Mai", "Juin", "Juil", "Aou", "Sep", "Oct", "Nov", "Dec" ],
+        monthNames: [ "Janvier", "Fevrier", "Mars", "Avril", "Mai", "Juin",
+        "Juillet", "Aout", "Septembre", "Octobre", "Novembre", "Decembre" ],
+        monthNamesShort: [ "Jan", "Fev", "Mar", "Avr", "Mai", "Juin",
+        "Juil", "Aou", "Sep", "Oct", "Nov", "Dec" ],
         changeMonth: true,
         changeYear: true,
         gotoCurrent: true
@@ -79,16 +83,16 @@ $(document).ready(function(){
 </div>
 
 <div class="datepicker-container">
-<div id="datepicker"></div>
+    <div id="datepicker"></div>
 </div>
 
 
 <div class="timepicker-container">
-<div class="timepicker-subcontainer">
-    <input class="timepicker1heures"></input>
-    <p> : </p>
-    <input class="timepicker1minutes"></input>
-</div>
+    <div class="timepicker-subcontainer">
+        <input class="timepicker1heures"></input>
+        <p> : </p>
+        <input class="timepicker1minutes"></input>
+    </div>
 </div>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
