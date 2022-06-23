@@ -34,6 +34,11 @@
         
         case $path === '/' :
             include "./view/view_connection.html";
+            break;
+        
+        case $path === '/inscription' :
+            include "./view/view_inscription.html";
+            break;
     }
 
 ?>
