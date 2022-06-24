@@ -37,8 +37,9 @@
             break;
         
         case $path === '/inscription' :
-            include "./view/view_inscription.html";
+            include "./ctrl/ctrl_inscription.php";
             break;
     }
 
+    
 ?>
