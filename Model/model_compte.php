@@ -5,54 +5,56 @@
         private $mdp_compte;
         private $cle_compte;
         private $isAuth;
-        public function __construct($id, $mail, $mdp, $cle)
+        public function __construct($id, $mail, $mdp, $cle, $auth)
         {
             $this -> id_compte = $id;
             $this -> mail_compte = $mail;
             $this -> mdp_compte = $mdp;
             $this -> cle_compte = $cle;
+            $this -> isAuth = $auth
         }
         // GETTER
-        public function getIdProd():int{
-            return $this -> id_prod;
+        public function getIdCompte():int{
+            return $this -> id_compte;
         }
-        public function getNomProd():string{
-            return $this -> nom_prod;
+        public function getMailCompte():string{
+            return $this -> mail_compte;
         }
-        public function getIngredientProd():string{
-            return $this -> ingredient_prod;
+        public function getMdpCompte():string{
+            return $this -> mdp_compte;
         }
-        public function getPrixProd():float{
-            return $this -> prix_prod;
+        public function getCleCompte():float{
+            return $this -> cle_compte;
         }
-        public function getCatProd():string{
-            return $this -> cat_prod;
+        public function getAuthCompte():string{
+            return $this -> isAuth;
         }
         // SETTER
-        public function setIdProd($id):void{
-            $this -> id_prod = $id;
+        public function setIdCompte($id):void{
+            $this -> id_compte = $id;
         }
-        public function setnomProd($nom):void{
-            $this -> nom_prod = $nom;
+        public function setMailCompte($mail):void{
+            $this -> mail_compte = $mail;
         }
-        public function setIngredientProd($ingredient):void{
-            $this -> ingredient_prod = $ingredient;
+        public function setMdpCompte($mdp):void{
+            $this -> mdp_compte = $mdp;
         }
-        public function setPrixProd($prix):void{
-            $this -> prix_prod = $prix;
+        public function setCleCompte($cle):void{
+            $this -> cle_compte = $cle;
         }
-        public function setCatProd($cat):void{
-            $this -> cat_prod = $cat;
+        public function setAuthCompte($auth):void{
+            $this -> isAuth = $auth;
         }
         // Méthodes
-        public function showProduitByCat($bdd):array{
+        public function ajoutCompte($bdd, $user):array{
             try{
-                $req = $bdd->prepare('SELECT * FROM (produits) WHERE (cat_prod = :cat)');
+                $req = $bdd->prepare('INSERT INTO compte(login_compte, password_compte, auth_compte, estValide) VALUES (:mail, :mdp, :auth, :isAuth)');
                 $req->execute(array(
-                    ':cat' => $this -> getCatProd(),
+                    ':mail' => $this -> getMailCompte(),
+                    ':mdp' => $this -> getMdpCompte(),
+                    ':auth' => $this -> getCleCompte(),
+                    ':isAuth' => $this -> getAuthCompte()
                 ));
-                $data = $req -> fetchAll(PDO::FETCH_OBJ);
-                return $data;
             }
             catch(Exception $e){
                 die('Erreur '.$e->getMessage());
