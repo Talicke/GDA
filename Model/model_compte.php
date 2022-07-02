@@ -5,9 +5,8 @@
         private $mdp_compte;
         private $cle_compte;
         private $isAuth;
-        public function __construct($id, $mail, $mdp, $cle, $auth)
+        public function __construct($mail, $mdp, $cle, $auth)
         {
-            $this -> id_compte = $id;
             $this -> mail_compte = $mail;
             $this -> mdp_compte = $mdp;
             $this -> cle_compte = $cle;
@@ -23,10 +22,10 @@
         public function getMdpCompte():string{
             return $this -> mdp_compte;
         }
-        public function getCleCompte():float{
+        public function getCleCompte(){
             return $this -> cle_compte;
         }
-        public function getAuthCompte():string{
+        public function getAuthCompte(){
             return $this -> isAuth;
         }
         // SETTER
@@ -46,9 +45,9 @@
             $this -> isAuth = $auth;
         }
         // Méthodes
-        public function ajoutCompte($bdd, $user):array{
+        public function ajoutCompte($bdd):void{
             try{
-                $req = $bdd->prepare('INSERT INTO compte(login_compte, password_compte, auth_compte, estValide) VALUES (:mail, :mdp, :auth, :isAuth)');
+                $req = $bdd->prepare('INSERT INTO comptes(login_compte, password_compte, auth_compte, estValide) VALUES (:mail, :mdp, :auth, :isAuth)');
                 $req->execute(array(
                     ':mail' => $this -> getMailCompte(),
                     ':mdp' => $this -> getMdpCompte(),
@@ -60,5 +59,20 @@
                 die('Erreur '.$e->getMessage());
         }
     }
-}
+
+        public function voirCompteParEmail($bdd){
+            try{
+                $req = $bdd->prepare('SELECT * FROM comptes WHERE :login_compte = :mail');
+                $req->execute(array(
+                    ':mail' => $this -> getMailCompte(),
+                ));
+                $data = $req -> fetchAll(PDO::FETCH_OBJ);
+                return $data;
+            }
+            catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
+    }
+
 ?>
