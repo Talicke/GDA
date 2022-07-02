@@ -11,7 +11,7 @@
             $this -> mail_compte = $mail;
             $this -> mdp_compte = $mdp;
             $this -> cle_compte = $cle;
-            $this -> isAuth = $auth
+            $this -> isAuth = $auth;
         }
         // GETTER
         public function getIdCompte():int{

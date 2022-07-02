@@ -229,6 +229,14 @@ h1{
     align-self: end;
 }
 
+.xdebug-error{
+    position: absolute;
+    left:0;
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 2em;
+}
+
 @media screen and (max-height: 600px){
 
     .hidden-height{
