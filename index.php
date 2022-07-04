@@ -31,6 +31,10 @@
         case $path === '/newNote' : 
             include "./view/view_accueil.html";
             break ;
+
+        case $path === '/newMail' :
+            include "./view/view_newMail.html";
+            break;
         
         case $path === '/' :
             include "./view/view_connection.html";

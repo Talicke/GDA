@@ -1,5 +1,6 @@
 <?php
     include "./utils/connecteBDD.php";
+    include "./utils/keyGen.php";
     include "./model/model_compte.php";
     include "./view/view_inscription.html";
 
@@ -9,7 +10,7 @@
         if(!empty($_POST['mail']) AND !empty($_POST['conf_mail']) AND !empty($_POST['mdp']) AND !empty($_POST['conf_mdp'])){
             echo "tout les champs sont remplis";
             if ($_POST["mail"] === $_POST["conf_mail"]){
-                $compte = New Compte($_POST["mail"], $_POST["mdp"], null, null);
+                $compte = New Compte($_POST["mail"], $_POST["mdp"], generateKey(), null);
                 $tabCompte = $compte->voirCompteParEmail($bdd);
                 echo "les e-mails correspondent";
                 if (empty($tabCompte)){
@@ -18,6 +19,8 @@
                         echo "les mdp sont indentiques";
                     
                         $compte->ajoutCompte($bdd);
+                        Header('Location: ./newMail');
+                        
                     }else{
                         echo "les mots de passe ne sont pas identiquent";
                     }

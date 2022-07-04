@@ -62,7 +62,7 @@
 
         public function voirCompteParEmail($bdd){
             try{
-                $req = $bdd->prepare('SELECT * FROM comptes WHERE :login_compte = :mail');
+                $req = $bdd->prepare('SELECT * FROM comptes WHERE login_compte = :mail');
                 $req->execute(array(
                     ':mail' => $this -> getMailCompte(),
                 ));
