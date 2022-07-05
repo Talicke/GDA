@@ -28,6 +28,10 @@
             include './ctrl/ctrl_reglages.php';
             break ;
 
+        case $path === '/verifCompte':
+            include './ctrl/ctrl_verifCompte.php';
+            break;
+
         case $path === '/newNote' : 
             include "./view/view_accueil.html";
             break ;

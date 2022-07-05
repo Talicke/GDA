@@ -73,6 +73,20 @@
                 die('Erreur '.$e->getMessage());
             }
         }
+
+        public function voirCompteParId($bdd){
+            try{
+                $req = $bdd->prepare('SELECT * FROM compte WHERE id_compte = :id');
+                $req->execute(array(
+                    ':id' => $this -> getIdCompte(),
+                ));
+                $data = $req -> fetchAll(PDO::FETCH_OBJ);
+                return $data;
+            }
+            catch(Exception $e){
+                die('Erreur' .$e->getMessage());
+            }
+        }
     }
 
 ?>
