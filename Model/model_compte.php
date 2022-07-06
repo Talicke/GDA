@@ -74,11 +74,11 @@
             }
         }
 
-        public function voirCompteParId($bdd){
+        public function voirCompteParId($bdd, $id){
             try{
-                $req = $bdd->prepare('SELECT * FROM compte WHERE id_compte = :id');
+                $req = $bdd->prepare('SELECT * FROM comptes WHERE id_compte = :id');
                 $req->execute(array(
-                    ':id' => $this -> getIdCompte(),
+                    ':id' => $id
                 ));
                 $data = $req -> fetchAll(PDO::FETCH_OBJ);
                 return $data;
@@ -87,6 +87,18 @@
                 die('Erreur' .$e->getMessage());
             }
         }
+
+        // public function validerCompte($bdd, $id){
+        //     try{
+        //         $req = $bdd->prepare('UPDATE comptes SET estValide = 1 WHERE :id_compte = :id');
+        //         $req->execute(array(
+        //             ':id' => $id
+        //         ));
+        //     }
+        //     catch(Exception $e){
+        //         die('Erreur' .$e->getMessage());
+        //     }
+        // }
     }
 
 ?>
