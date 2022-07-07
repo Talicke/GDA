@@ -80,7 +80,7 @@
                 $req->execute(array(
                     ':id' => $id
                 ));
-                $data = $req -> fetchAll(PDO::FETCH_OBJ);
+                $data = $req -> fetch(PDO::FETCH_OBJ);
                 return $data;
             }
             catch(Exception $e){
