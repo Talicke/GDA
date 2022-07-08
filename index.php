@@ -41,7 +41,7 @@
             break;
         
         case $path === '/' :
-            include "./view/view_connection.html";
+            include "./ctrl/ctrl_connection.php";
             break;
         
         case $path === '/inscription' :

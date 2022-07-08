@@ -13,11 +13,11 @@ if (!isset($_GET['id']) && !isset($_GET['key'])){
         echo $user->auth_compte;
         if($_GET['key'] == $user->auth_compte){
             echo "Le compte est bon";
-            mail(
-                "ropars.k@gmail.com",
-                "Authentification GDA",
-                'http://gda/verifCompte?id='.$user->id_compte.'&key='.$user->auth_compte.'',
-            );
+            // mail(
+            //     "ropars.k@gmail.com",
+            //     "Authentification GDA",
+            //     'http://gda/verifCompte?id='.$user->id_compte.'&key='.$user->auth_compte.'',
+            // );
             
         }else{
             echo "mauvaise clé";
