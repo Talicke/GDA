@@ -11,12 +11,6 @@
     $path = isset($url['path']) ? $url['path'] : '/';
 
 
-    if(isset($_POST['valider'])){
-        // echo("powet");
-        header('Location: ./reglages');
-    }
-
-
 
     /*------------------------------------------------
                         ROUTEUR
@@ -33,7 +27,7 @@
             break;
 
         case $path === '/newNote' : 
-            include "./view/view_accueil.html";
+            include "./ctrl/ctrl_new_note.php";
             break ;
 
         case $path === '/newMail' :

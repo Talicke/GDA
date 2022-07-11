@@ -5,6 +5,7 @@
         private $mdp_compte;
         private $cle_compte;
         private $isAuth;
+
         public function __construct($mail, $mdp, $cle, $auth)
         {
             $this -> mail_compte = $mail;
@@ -57,8 +58,8 @@
             }
             catch(Exception $e){
                 die('Erreur '.$e->getMessage());
+            }
         }
-    }
 
         public function voirCompteParEmail($bdd){
             try{

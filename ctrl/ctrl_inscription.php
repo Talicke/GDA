@@ -10,7 +10,7 @@
         if(!empty($_POST['mail']) AND !empty($_POST['conf_mail']) AND !empty($_POST['mdp']) AND !empty($_POST['conf_mdp'])){
             echo "tout les champs sont remplis";
             if ($_POST["mail"] === $_POST["conf_mail"]){
-                $compte = New Compte($_POST["mail"], $_POST["mdp"], generateKey(), null);
+                $compte = New Compte($_POST["mail"], $_POST["mdp"], generateKey(), 0);
                 $tabCompte = $compte->voirCompteParEmail($bdd);
                 echo "les e-mails correspondent";
                 if (empty($tabCompte)){
