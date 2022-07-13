@@ -9,7 +9,7 @@
             $date =  date('d-m-y H:i:s');
             $note = new Note($_POST['addNote'],$date, 0, 1, null, null, $_SESSION['id'], null, null );
             $note->ajoutNote($bdd);
-            header('Location: ./reglages?date='.$date.'');
+            header('Location: ./reglages');
         }else{
             echo "Aucune note à enregistrer";
         }

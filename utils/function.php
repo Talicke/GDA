@@ -1,11 +1,11 @@
 <?php
     include "./utils/connecteBDD.php";
 
-function voirDerniereNote($bdd, $date){
+function voirDerniereNote($bdd, $id_compte){
             try{
-            $req = $bdd->prepare('SELECT * FROM notes WHERE date_note = :date_note');
+            $req = $bdd->prepare('SELECT * FROM notes WHERE id_compte = :id ORDER BY id_note DESC LIMIT 1 ');
             $req->execute(array(
-                ':date_note' => $date
+                ':id' => $id_compte
             ));
             $data = $req -> fetch(PDO::FETCH_OBJ);
                 return $data;
