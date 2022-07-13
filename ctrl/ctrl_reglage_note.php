@@ -9,7 +9,11 @@
 
     if(!isset($_GET['id'])){
         echo 'Une date est séléctionner';
-        $data = voirDerniereNote($bdd, $_SESSION['id']);
-        var_dump($data);
+        $data = voirDerniereNote($bdd, $_GET['date']);
+        echo 
+        "<script>
+            let modifNote = document.querySelector('#modifNote');
+            modifNote.value = '$data->contenu_note';
+        </script>";
     }
 ?>
