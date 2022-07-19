@@ -1,5 +1,4 @@
 <?php
-    include "./utils/connecteBDD.php";
 
 function voirDerniereNote($bdd, $id_compte){
             try{

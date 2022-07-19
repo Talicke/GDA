@@ -25,7 +25,7 @@
 
         //GETTER
         public function getIdNote():int{
-            return $this -> id_compte;
+            return $this -> id_note;
         }
         public function getContenuNote():string{
             return $this -> contenu_note;
@@ -57,7 +57,7 @@
 
         //SETTER
         public function setIdNote($id):void{
-            $this -> id_compte = $id;
+            $this -> id_note = $id;
         }
         public function setContenuNote($contenu):void{
             $this -> contenu_note = $contenu;
@@ -107,5 +107,19 @@
                 die('Erreur '.$e->getMessage());
             }
         }
+
+        public function changerCatNote($bdd, $cat_note){
+            try{
+                $req = $bdd->prepare('UPDATE notes SET id_cat = :cat_note WHERE id_note = :id_note');
+                $req->execute(array(
+                    'cat_note' => $cat_note,
+                    'id_note' =>$this->getIdNote()
+                ));
+            }
+            catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
+        
 
     }
