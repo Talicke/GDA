@@ -123,7 +123,7 @@
         
         public function modifierNote($bdd){
             try{
-                $req = $bdd->prepare('UPDATE notes SET contenu_note = :contenu, id_activite = activite, id_projet = projet WHERE id_note = :id_note');
+                $req = $bdd->prepare('UPDATE notes SET contenu_note = :contenu, id_activite = :activite, id_projet = :projet WHERE id_note = :id_note');
                 $req->execute(array(
                     'contenu' => $this->getContenuNote(),
                     'activite' => $this->getIdActivite(),

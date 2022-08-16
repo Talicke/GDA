@@ -4,7 +4,7 @@ section{
     margin-top: 25vh;
 }
 
-form{
+section form{
     display: flex;
     flex-direction: column;
     margin: auto;

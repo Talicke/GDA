@@ -13,6 +13,9 @@
     
 
     if(isset($_POST['valider'])){
+        // var_dump($note);
+        $note->setContenuNote($_POST['modifNote']);
+        $note->modifierNote($bdd);
         echo "modification note enregistré !";
     }
 ?>
