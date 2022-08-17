@@ -27,7 +27,7 @@
             return $this->id_compte;
         }
         public function getFrequenceActivite(){
-            return $this->id_frequence
+            return $this->id_frequence;
         }
         
         // SETTER
@@ -44,6 +44,36 @@
             $this->id_compte = $compte;
         }
         public function setFrequenceActivite($frequence):void{
-            $this->id_frequence = $frequence
+            $this->id_frequence = $frequence;
         }
+
+
         // Méthodes
+        public function ajoutActivite($bdd):void{
+            try{
+                $req = $bdd->prepare('INSERT INTO activites(nom_activite, temps_activite, id_compte, id_freq)
+                VALUES (:nom, :temps, :compte, :freq)');
+                $req->execute(array(
+                    ':nom'=> $this->getNomActivite(),
+                    ':temps' => $this->getTempsActivite(),
+                    'compte' => $this->getCompteActivite(),
+                    'freq' => $this->getFrequenceActivite()
+                ));
+            }
+            catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
+
+        public function voirToutActivite($bdd):array{
+            try{
+                $req = $bdd->prepare('SELECT id_activite, nom_activite, temps_activite, id_compte, id_freq FROM activites');
+                $req->execute();
+                $data = $req->fetchall(PDO::FETCH_OBJ);
+                return $data;
+            }
+            catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
+    }
