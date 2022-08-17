@@ -1,4 +1,4 @@
-CREATE database GDA CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE database GDA CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 use GDA;
 
 create table comptes(
@@ -37,9 +37,7 @@ estTerminer bool not null,
 id_cat int not null,
 id_activite int null,
 id_projet int null,
-id_compte int not null,
-id_rdv int null, 
-id_rappel int null
+id_compte int not null
 )engine=InnoDB;
 
 create table categories(
@@ -47,29 +45,27 @@ id_cat int auto_increment primary key not null,
 intituler_cat varchar(50) not null
 )engine=InnoDB;
 
-create table prester(
-id_note int not null,
-id_tache int not null,
-primary key (id_note, id_tache)
-)engine=InnoDB;
 
 create table taches(
 id_tache int auto_increment primary key not null,
 date_tache datetime not null,
-duree_tache float not null
+duree_tache float not null,
+id_note int not null
 )engine=InnoDB;
 
 create table rappels(
 id_rappel int auto_increment primary key not null,
 date_rappel date not null,
-heure_rappel time not null
+heure_rappel time not null,
+id_note int not null
 )engine=InnoDB;
 
 create table rdv(
 id_rdv int auto_increment primary key not null,
 date_rdv date not null,
 heure_rdv time not null,
-lieu_rdv varchar(255)
+lieu_rdv varchar(255),
+id_note int not null
 )engine=InnoDB;
 
 alter table projets
@@ -112,25 +108,21 @@ add constraint fk_ecrivailler_compte
 foreign key(id_compte)
 references comptes(id_compte);
 
-alter table notes
-add constraint fk_etre_rdv
-foreign key (id_rdv)
-references rdv(id_rdv);
-
-alter table notes
-add constraint fk_rappeller_rappel
-foreign key (id_rappel)
-references rappels(id_rappel);
-
-alter table prester
+alter table taches
 add constraint fk_prester_note
 foreign key (id_note)
 references notes(id_note);
 
-alter table prester
-add constraint fk_prester_tache
-foreign key (id_tache)
-references taches (id_tache);
+alter table rappels
+add constraint fk_rappeller_note
+foreign key (id_note)
+references notes(id_note);
+
+alter table rdv
+add constraint fk_etre_note
+foreign key (id_note)
+references notes(id_note);
+
 
 INSERT INTO `gda`.`categories` (`intituler_cat`) VALUES ('note');
 INSERT INTO `gda`.`categories` (`intituler_cat`) VALUES ('tache');

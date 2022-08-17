@@ -8,7 +8,7 @@
     if(!isset($_GET['id'])){
         echo "Aucune id n'est dans l'url";
         $data = voirDerniereNote($bdd, $_SESSION['id']);
-        $note = new Note($data->contenu_note, $data->date_note, $data->estTerminer, $data->id_cat, $data->id_activite, $data->id_projet, $data->id_compte, $data->id_rdv, $data->id_rappel);
+        $note = new Note($data->contenu_note, $data->date_note, $data->estTerminer, $data->id_cat, $data->id_activite, $data->id_projet, $data->id_compte);
         $note->setIdNote($data->id_note);
     }
     // var_dump($note);

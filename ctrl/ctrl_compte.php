@@ -1,3 +1,5 @@
 <?php
-    echo "ctrl_compte.php";
+    include './view/view_compte.html';
+
+    
 ?>

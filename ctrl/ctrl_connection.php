@@ -13,6 +13,7 @@ if(isset($_POST['connection'])){
                 $_SESSION['id'] = $compte->id_compte;
                 $_SESSION['mail'] = $compte->login_compte;
                 $_SESSION['estValide'] = $compte->estValide;
+                $_SESSION['estConnecter'] = true;
                 header('Location: ./newNote');
             }else{
                 echo "information incorrect !";

@@ -1,0 +1,19 @@
+#modifCompte{
+    width: 30vw;
+}
+
+#nouveauMail, #nouveauMdp{
+    display:flex;
+    flex-direction:column;
+    width:80%;
+    background-color: #212529;
+    border: 3px solid #394984;
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    margin-bottom: 20vh;
+}
+
+label{
+    color: white;
+}

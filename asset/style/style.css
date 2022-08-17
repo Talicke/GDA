@@ -37,6 +37,11 @@ h1{
     font-size: 5em;
 }
 
+h4{
+    font-family: 'Cabon Sketch', cursive;
+    color:#CDD0D2;
+}
+
 #logo{
     max-width: 20vh;
     height: auto;

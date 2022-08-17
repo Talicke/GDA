@@ -8,10 +8,8 @@
         private $id_activite;
         private $id_projet;
         private $id_compte;
-        private $id_rdv;
-        private $id_rappel;
 
-        public function __construct($contenu, $date, $estTerminer, $cat, $activite, $projet, $compte, $rdv, $rappel){
+        public function __construct($contenu, $date, $estTerminer, $cat, $activite, $projet, $compte){
             $this -> contenu_note = $contenu;
             $this -> date_note = $date;
             $this -> estTerminer = $estTerminer;
@@ -19,8 +17,6 @@
             $this -> id_activite = $activite;
             $this -> id_projet = $projet;
             $this -> id_compte = $compte;
-            $this -> id_rdv = $rdv;
-            $this -> id_rappel = $rappel;
         }
 
         //GETTER
@@ -48,12 +44,6 @@
         public function getIdCompte(){
             return $this -> id_compte;
         }
-        public function getIdRdv(){
-            return $this -> id_rdv;
-        }
-        public function getIdRappel(){
-            return $this -> id_rappel;
-        }
 
         //SETTER
         public function setIdNote($id):void{
@@ -80,17 +70,12 @@
         public function setIdCompte($id):void{
             $this -> id_compte = $id;
         }
-        public function setIdRdv($id):void{
-            $this -> id_rdv = $id;
-        }
-        public function setIdRappel($id):void{
-            $this -> id_rappel = $id;
-        }
+    
         //methode
         public function ajoutNote($bdd):void{
             try{
-                $req = $bdd->prepare('INSERT INTO notes(contenu_note, date_note, estTerminer, id_cat, id_activite, id_projet, id_compte, id_rdv, id_rappel)
-                VALUES (:contenu, :date, :estTerminer, :cat, :activite, :projet, :compte, :rdv, :rappel)');
+                $req = $bdd->prepare('INSERT INTO notes(contenu_note, date_note, estTerminer, id_cat, id_activite, id_projet, id_compte)
+                VALUES (:contenu, :date, :estTerminer, :cat, :activite, :projet, :compte)');
                 $req->execute(array(
                     ':contenu'=> $this->getContenuNote(),
                     ':date'=>$this->getDateNote(),
@@ -99,8 +84,6 @@
                     ':activite'=>$this->getIdActivite(),
                     ':projet'=>$this->getIdProjet(),
                     ':compte'=>$this->getIdCompte(),
-                    ':rdv'=>$this->getIdRdv(),
-                    ':rappel'=>$this->getIdRappel()
                 ));
             }
             catch(Exception $e){
