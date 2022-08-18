@@ -129,7 +129,7 @@ INSERT INTO `gda`.`categories` (`intituler_cat`) VALUES ('tache');
 INSERT INTO `gda`.`categories` (`intituler_cat`) VALUES ('rappel');
 INSERT INTO `gda`.`categories` (`intituler_cat`) VALUES ('RDV');
 
-INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('/jour');
-INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('/semaine');
-INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('/mois');
-INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('/an');
+INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('par jour');
+INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('par semaine');
+INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('par mois');
+INSERT INTO `gda`.`frequences` (`intituler_freq`) VALUES ('par an');

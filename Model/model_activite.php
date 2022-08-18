@@ -56,8 +56,8 @@
                 $req->execute(array(
                     ':nom'=> $this->getNomActivite(),
                     ':temps' => $this->getTempsActivite(),
-                    'compte' => $this->getCompteActivite(),
-                    'freq' => $this->getFrequenceActivite()
+                    ':compte' => $this->getCompteActivite(),
+                    ':freq' => $this->getFrequenceActivite()
                 ));
             }
             catch(Exception $e){
@@ -65,10 +65,15 @@
             }
         }
 
-        public function voirToutActivite($bdd):array{
+        public function voirToutActiviteParCompte($bdd):array{
             try{
-                $req = $bdd->prepare('SELECT id_activite, nom_activite, temps_activite, id_compte, id_freq FROM activites');
-                $req->execute();
+                $req = $bdd->prepare('SELECT id_activite, nom_activite, temps_activite, id_compte, intituler_freq 
+                FROM activites, frequences 
+                WHERE activites.id_freq = frequences.id_freq 
+                AND id_compte = :compte');
+                $req->execute(array(
+                    ':compte' => $this->getCompteActivite()
+                ));
                 $data = $req->fetchall(PDO::FETCH_OBJ);
                 return $data;
             }
