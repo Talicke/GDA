@@ -1,4 +1,8 @@
 <?php
+    include './utils/twig.php';
+
+    echo $twig->render('main.html.twig');
+
     session_start();
     if($_SESSION['estConnecter']){
         include "./ctrl/ctrl_header.php";
