@@ -9,9 +9,10 @@
 }
 
 body{
+    font-size: 16px;
     display: grid;
     grid-template-columns: auto 75px;
-    grid-template-rows: 20vh auto;
+    grid-template-rows: 20vh 80vh;
     background-color: #333333;
 }
 
@@ -24,18 +25,32 @@ header{
     border-radius: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 1px 100px 20px 1px;
     margin: 20px auto 20px auto;
     margin-bottom: 2%;
     box-shadow: inset 0px 4px 4px #00000040;
+    /* vertical | horizontal */
+    padding: 1% 1%;
 }
 
-h1{
-    grid-column: 1;
-    grid-row: 2;
+header h1{
     font-family: 'Cabin Sketch', cursive;
     font-size: 5em;
 }
+
+#content{
+    grid-column: 1;
+    grid-row: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* h1{
+    grid-column: 1;
+    grid-row: 2;
+    font-family: 'Cabin Sketch', cursive;
+    
+} */
 
 h4{
     font-family: 'Cabon Sketch', cursive;
@@ -45,7 +60,6 @@ h4{
 #logo{
     max-width: 20vh;
     height: auto;
-    margin: auto 10px auto 10px;
 }
 
 .submit-button:hover{

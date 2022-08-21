@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+{% block head %}
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {% block css %}
+            <link rel="stylesheet" href="./asset/style/style.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        {% endblock css %}
+        <title>Acceuil</title>
+    </head>
+
+{% endblock head %}
+
+{% block header %}
+    <header>
+        <img src="./asset/images/Logo GDA.png" alt="Logo de GDA" id="logo">
+        <h1>{{ titre }}</h1>
+    </header>
+{% endblock header %}
+
+{% block body %}
+<body>
+
+
+    {% block nav %}
+    {% endblock nav %}
+
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+
+
+
+
+    {% block script %}
+    {% endblock script %}
+
+{% endblock body %}

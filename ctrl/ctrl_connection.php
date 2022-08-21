@@ -1,7 +1,7 @@
 <?php
 include "./utils/connecteBDD.php";
 include "./Model/model_compte.php";
-include "./view/view_connection.html";
+// include "./view/view_connection.html";
 
 
 if(isset($_POST['connection'])){
@@ -25,3 +25,7 @@ if(isset($_POST['connection'])){
         echo "Tout les champs doivent être remplient";
     }
 }
+
+echo $twig->render('connexion.html.twig')
+
+?>

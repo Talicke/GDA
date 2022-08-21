@@ -1,6 +1,4 @@
 <?php
-    include "./view/view_header.html";
-
 
     if(isset($_POST['compte'])){
         header('Location: ./compte');
@@ -29,4 +27,7 @@
     if(isset($_POST['note'])){
         header('Location: ./notes');
     }
+
+    echo $twig->render('nav.html.twig');
+    
 ?>
