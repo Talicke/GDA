@@ -1,7 +1,7 @@
 <?php
     include "./utils/connecteBDD.php";
     include "./Model/model_note.php";
-    include "./view/view_accueil.html";
+    // include "./view/view_accueil.html";
     
 
     if(isset($_POST['valider'])){
@@ -14,5 +14,9 @@
             echo "Aucune note à enregistrer";
         }
     }
+
+    echo $twig->render('nouvNote.html.twig', [
+        'titre' => 'Nouvelle note'
+    ])
 
 ?>

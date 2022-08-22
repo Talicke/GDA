@@ -1,0 +1,17 @@
+{% extends 'main.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="./asset/style/accueil.css">
+    {{parent()}}
+{% endblock css %}
+
+{% block content %}
+    <div class="valoriser">
+        <form method="post" action="">
+                <textarea name="addNote" placeholder="Ecrivez une note" id="addNote"></textarea>
+            </div>
+            <button type="submit" name="valider" class="submit-button">Valider</button>
+        </form>
+    </div>
+{% endblock content %}
+

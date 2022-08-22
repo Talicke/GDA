@@ -7,18 +7,20 @@
 
 
 {% block content %}
-    <form method="post" action="">
-    <div class="form_input">
-        <label for="login">Login :</label>
-        <input name="login" type="text">
+    <div class="valoriser">
+        <form method="post" action="">
+            <div class="form_input">
+                <label for="login">Login :</label>
+                <input name="login" type="text">
+            </div>
+            <div class="form_input">
+                <label for="mdp">Mot de passe :</label>
+                <input name="mdp" type="password">
+            </div>
+            <div class="form_valide">
+                <a href="./inscription">Inscription</a>
+                <input name="connexion" type="submit" value="Connexion" class="submit-button">
+            </div>
+        </form>
     </div>
-    <div class="form_input">
-        <label for="mdp">Mot de passe :</label>
-        <input name="mdp" type="password">
-    </div>
-    <div class="form_valide">
-        <a href="./inscription">Inscription</a>
-        <input name="connexion" type="submit" value="Connexion" class="submit-button">
-    </div>
-</form>
 {% endblock content %}
