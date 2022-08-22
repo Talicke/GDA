@@ -37,6 +37,13 @@ header h1{
     font-size: 5em;
 }
 
+input{
+    background-color: #CDD0D2;
+    border-radius: 10px;
+    font-size: 1.2em;
+    padding: 1%;
+}
+
 #content{
     grid-column: 1;
     grid-row: 2;
@@ -44,6 +51,32 @@ header h1{
     justify-content: space-around;
     align-items: center;
 }
+
+.valoriser{
+    color: #CDD0D2;
+    padding: 2%;
+    margin: auto;
+    background-color: #212529;
+    border: 2px solid #394984;
+    border-radius: 20px;
+    box-shadow: 0px 4px 4px #00000040;
+}
+
+.form_input{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 25vw;
+    height: 8vh;
+    font-size: 1.2em;
+    margin-bottom: 2%;
+}
+
+a{
+    font-size: 1.5em;
+}
+
+
 
 /* h1{
     grid-column: 1;
@@ -58,8 +91,21 @@ h4{
 }
 
 #logo{
-    max-width: 20vh;
+    max-width: 100%;
     height: auto;
+}
+
+.submit-button{
+    background-color: #394984;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+    box-shadow:  inset 5px 0px 30px  #00000040,  inset -5px 0px 30px  #ffffff40;
+    color:#ffffff;
+    border: 0px;
+    /* position: relative; */
+    font-size: 1.3em;
+    align-self: end;
 }
 
 .submit-button:hover{
@@ -234,19 +280,7 @@ h4{
     display: none;
 }
 
-.submit-button{
-    background-color: #394984;
-    width: 150px;
-    height: 50px;
-    border-radius: 15px;
-    box-shadow:  inset 5px 0px 30px  #00000040,  inset -5px 0px 30px  #ffffff40;
-    color:#ffffff;
-    border: 0px;
-    /* position: relative; */
-    font-size: 1.3em;
-    margin-top: 5vh;
-    align-self: end;
-}
+
 
 .xdebug-error{
     position: absolute;

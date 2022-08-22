@@ -1,10 +1,14 @@
 <?php
 include "./utils/connecteBDD.php";
 include "./Model/model_compte.php";
-// include "./view/view_connection.html";
+
+    /*------------------------------------------------
+                        VARIABLES
+    ------------------------------------------------*/
 
 
-if(isset($_POST['connection'])){
+
+if(isset($_POST['connexion'])){
     if(!empty($_POST['login']) && !empty($_POST['mdp'])){
         $user = new Compte($_POST['login'], $_POST['mdp'], null, null);
         $compte=$user->voirCompteParEmail($bdd);
@@ -26,6 +30,8 @@ if(isset($_POST['connection'])){
     }
 }
 
-echo $twig->render('connexion.html.twig')
+echo $twig->render('connexion.html.twig',[
+    'titre' => 'Connexion'
+])
 
 ?>

@@ -2,11 +2,12 @@
 
 {% block css %}
     <link rel="stylesheet" href="./asset/style/inscriCo.css">
+    {{parent()}}
 {% endblock css %}
 
 
 {% block content %}
-    <form method="post" action="" id="connection">
+    <form method="post" action="">
     <div class="form_input">
         <label for="login">Login :</label>
         <input name="login" type="text">
@@ -17,7 +18,7 @@
     </div>
     <div class="form_valide">
         <a href="./inscription">Inscription</a>
-        <input name="connection" type="submit" value="connection" class="submit-button">
+        <input name="connexion" type="submit" value="Connexion" class="submit-button">
     </div>
 </form>
 {% endblock content %}

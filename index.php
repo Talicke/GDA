@@ -1,6 +1,5 @@
 <?php
     include './utils/twig.php';
-    include './ctrl/ctrl_nav.php';
 
     session_start();
 
@@ -8,22 +7,21 @@
                         VARIABLES
     ------------------------------------------------*/
 
-    $_SESSION['estConnecter'] = true;
-
     //Analyse de l'URL avec parse_url() et retourne ses composants
     $url = parse_url($_SERVER['REQUEST_URI']);
     //test soit l'url a une route sinon on renvoi à la racine
     $path = isset($url['path']) ? $url['path'] : '/';
 
+
     /*------------------------------------------------
                         ROUTEUR
     ------------------------------------------------*/
     //test de la valeur $path dans l'URL et import de la ressource
+
     switch($path){
 
         case $path === '/' :
-            include "./ctrl/ctrl_connection.php";
-            $titre = 'Connexion';
+            include "./ctrl/ctrl_connexion.php";
             break;
         
         case $path === '/reglages' : 
@@ -115,14 +113,4 @@
         header('Location: ./notes');
     }
 
-
-    /*------------------------------------------------
-                        TWIG
-    ------------------------------------------------*/
-    echo $twig->render('main.html.twig', [
-        'connecter' => $_SESSION['estConnecter'],
-        'titre' => $titre
-    ]);
-
-    
 ?>

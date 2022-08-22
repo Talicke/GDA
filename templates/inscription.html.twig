@@ -1,0 +1,32 @@
+{% extends 'main.html.twig' %}
+
+{% block css %}
+    <link rel="stylesheet" href="./asset/style/inscriCo.css">
+    {{parent()}}
+{% endblock css %}
+
+
+{% block content %}
+<form method="post" action="">
+    <div class="form_input">
+        <label for="mail">Votre e-mail :</label>
+        <input name="mail" type="mail">
+    </div>
+    <div class="form_input">
+        <label for="conf_mail">Confirmer votre e-mail :</label>
+        <input name="conf_mail" type="mail">
+    </div>
+    <div class="form_input">
+        <label for="mdp">Mot de passe :</label>
+        <input name="mdp" type="password">
+    </div>
+    <div class="form_input">
+        <label for="conf_mdp">Confimer votre mot de passe :</label>
+        <input name="conf_mdp" type="password">
+    </div>
+    <div class="form_valide">
+        <a href="./">J'ai déja un compte</a>
+        <input type="submit" value="Inscription" class="submit-button" name="inscription">
+    </div>
+</form>
+{% endblock content %}
