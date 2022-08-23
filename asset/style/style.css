@@ -80,6 +80,17 @@ footer{
     box-shadow: 0px 4px 4px #00000040;
 }
 
+.error{
+    background-color: rgba(247, 187, 96);
+    border: solid orangered 2px;
+    border-radius: 15px;
+    color:orangered;
+    padding: 1%;
+    width: fit-content;
+    margin: auto;
+    padding: 1%;
+}
+
 .form_input{
     display: flex;
     flex-direction: column;

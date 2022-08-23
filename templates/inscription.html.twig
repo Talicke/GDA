@@ -1,4 +1,5 @@
 {% extends 'main.html.twig' %}
+{% import './macro/macro.html.twig' as mac %}
 
 {% block css %}
     <link rel="stylesheet" href="./asset/style/inscriCo.css">
@@ -9,22 +10,10 @@
 {% block content %}
 <div class="valoriser">
     <form method="post" action="">
-        <div class="form_input">
-            <label for="mail">Votre e-mail :</label>
-            <input name="mail" type="mail">
-        </div>
-        <div class="form_input">
-            <label for="conf_mail">Confirmer votre e-mail :</label>
-            <input name="conf_mail" type="mail">
-        </div>
-        <div class="form_input">
-            <label for="mdp">Mot de passe :</label>
-            <input name="mdp" type="password">
-        </div>
-        <div class="form_input">
-            <label for="conf_mdp">Confimer votre mot de passe :</label>
-            <input name="conf_mdp" type="password">
-        </div>
+        {{mac.input('mail', 'Votre e-mail : ', 'mail')}}
+        {{mac.input('conf_mail', 'Confirmer votre e-mail : ', 'mail')}}
+        {{mac.input('mdp', 'Mot de passe : ', 'password')}}
+        {{mac.input('conf_mdp', 'Confirmer votre mot de passe : ', 'password')}}
         <div class="form_valide">
             <a href="./">J'ai déja un compte</a>
             <input type="submit" value="Inscription" class="submit-button" name="inscription">

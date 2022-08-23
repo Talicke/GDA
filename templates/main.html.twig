@@ -78,7 +78,12 @@
 {% block footer %}
 
     <footer>
-
+    {% block message %}
+        {% apply html_to_markdown %}
+            {{ message }}
+        {% endapply %}
+    {% endblock %}
+            
     </footer>
 
 {% endblock footer %}

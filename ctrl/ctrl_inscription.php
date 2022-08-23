@@ -3,6 +3,7 @@
     include "./utils/keyGen.php";
     include "./utils/auth_mail.php";
     include "./model/model_compte.php";
+    include "./manager/manager_compte.php";
     // include "./view/view_inscription.html";
 
 
@@ -12,7 +13,7 @@
             echo "tout les champs sont remplis";
             if ($_POST["mail"] === $_POST["conf_mail"]){
                 $cle = generateKey();
-                $compte = New Compte($_POST["mail"], $_POST["mdp"], $cle, 0);
+                $compte = New ManagerCompte($_POST["mail"], $_POST["mdp"], $cle, 0);
                 $tabCompte = $compte->voirCompteParEmail($bdd);
                 echo "les e-mails correspondent";
                 if (empty($tabCompte)){
@@ -21,7 +22,11 @@
                         echo "les mdp sont indentiques";
                     
                         $compte->ajoutCompte($bdd);
-                        $compte->envoyerMail($login_smtp, $mdp_smtp, 'Vérification de votre compte GDA', 'Cet e-mail vous a été envoyer automatiquement afin de vérifier votre adresse e-mail.</br>Cliquez sur le lien ci-dessous pour vous authentifier</br><a href="http://gda/verifCompte?key='.$cle.'">Vérifier mon compte.</a>');
+                        $compte->envoyerMail($login_smtp, $mdp_smtp, utf8_decode('Vérification de votre compte 
+                        GDA'), utf8_decode('Cet e-mail vous a été envoyer automatiquement afin de vérifier votre
+                        adresse e-mail.</br>Cliquez sur le lien ci-dessous pour vous authentifier</br>
+                        <a href="http://gda/verifCompte?key='.$cle.'&mail='.$_POST['mail'].'">Vérifier 
+                        mon compte.</a>'));
                         // Header('Location: ./newMail');
                         
                     }else{

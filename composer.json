@@ -1,6 +1,7 @@
 {
     "require": {
         "twig/twig": "^3.0",
-        "phpmailer/phpmailer": "^6.6"
+        "phpmailer/phpmailer": "^6.6",
+        "twig/markdown-extra": "^3.4"
     }
 }

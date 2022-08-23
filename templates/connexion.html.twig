@@ -1,4 +1,5 @@
 {% extends 'main.html.twig' %}
+{% import './macro/macro.html.twig' as mac %}
 
 {% block css %}
     <link rel="stylesheet" href="./asset/style/inscriCo.css">
@@ -9,18 +10,14 @@
 {% block content %}
     <div class="valoriser">
         <form method="post" action="">
-            <div class="form_input">
-                <label for="login">Login :</label>
-                <input name="login" type="text">
-            </div>
-            <div class="form_input">
-                <label for="mdp">Mot de passe :</label>
-                <input name="mdp" type="password">
-            </div>
+            {{mac.input('login', 'Login : ', 'mail')}}
+            {{mac.input('mdp', 'Mot de passe : ', 'password')}}
             <div class="form_valide">
                 <a href="./inscription">Inscription</a>
                 <input name="connexion" type="submit" value="Connexion" class="submit-button">
             </div>
+            
+
         </form>
     </div>
 {% endblock content %}
