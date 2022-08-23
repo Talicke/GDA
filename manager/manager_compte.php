@@ -7,13 +7,18 @@
     class ManagerCompte extends Compte {
         public function ajoutCompte($bdd):void{
             try{
-                $req = $bdd->prepare('INSERT INTO comptes(login_compte, password_compte, auth_compte, estValide) VALUES (:mail, :mdp, :auth, :isAuth)');
-                $req->execute(array(
-                    ':mail' => $this -> getMailCompte(),
-                    ':mdp' => $this -> getMdpCompte(),
-                    ':auth' => $this -> getCleCompte(),
-                    ':isAuth' => $this -> getAuthCompte()
-                ));
+                $mail = $this->getMailCompte();
+                $mdp = $this->getMdpCompte();
+                $cle = $this->getCleCompte();
+                $estValide = $this->getAuthCompte();
+
+                $req = $bdd->prepare('INSERT INTO comptes(login_compte, password_compte, auth_compte, estValide) VALUES (?, ?, ?, ?)');
+
+                $req->bindparam(1, $mail, PDO::PARAM_STR);
+                $req->bindparam(2, $mdp, PDO::PARAM_STR);
+                $req->bindparam(3, $cle, PDO::PARAM_STR);
+                $req->bindparam(4, $estValide, PDO::PARAM_INT);
+                $req->execute();
             }
             catch(Exception $e){
                 die('Erreur '.$e->getMessage());
@@ -22,10 +27,13 @@
 
         public function voirCompteParEmail($bdd){
             try{
-                $req = $bdd->prepare('SELECT * FROM comptes WHERE login_compte = :mail');
-                $req->execute(array(
-                    ':mail' => $this -> getMailCompte(),
-                ));
+                $mail = $this->getMailCompte();
+
+                $req = $bdd->prepare('SELECT id_compte, login_compte, password_compte, auth_compte, estValide FROM comptes WHERE login_compte = ?');
+
+                $req->bindparam(1, $mail, PDO::PARAM_STR);
+                $req->execute();
+
                 $data = $req -> fetch(PDO::FETCH_OBJ);
                 return $data;
             }
@@ -34,12 +42,15 @@
             }
         }
 
-        public function voirCompteParId($bdd, $id){
+        public function voirCompteParId($bdd){
             try{
-                $req = $bdd->prepare('SELECT * FROM comptes WHERE id_compte = :id');
-                $req->execute(array(
-                    ':id' => $id
-                ));
+                $id = $this->getIdCompte();
+
+                $req = $bdd->prepare('SELECT * FROM comptes WHERE id_compte = ?');
+
+                $req->bindparam(1, $id, PDO::PARAM_INT);
+                $req->execute();
+
                 $data = $req -> fetch(PDO::FETCH_OBJ);
                 return $data;
             }
@@ -50,11 +61,14 @@
 
         public function validerCompte($bdd){
             try{
-                $req = $bdd->prepare('UPDATE comptes SET estValide = 1 WHERE login_compte = :mail');
-                $req->execute(array(
-                    ':mail' => $this->getMailCompte()
-                ));
+                $mail = $this->getMailCompte();
+
+                $req = $bdd->prepare('UPDATE comptes SET estValide = 1 WHERE login_compte = ?');
+                
+                $req->bindparam(1, $mail, PDO::PARAM_STR);
+                $req->execute();
             }
+
             catch(Exception $e){
                 die('Erreur' .$e->getMessage());
             }

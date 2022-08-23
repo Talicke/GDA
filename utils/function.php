@@ -13,4 +13,8 @@ function voirDerniereNote($bdd, $id_compte){
                 die('Erreur '.$e->getMessage());
             }
         }
+
+function netEntrer($input){
+    return htmlspecialchars(strip_tags(trim($input)));
+}
 ?>

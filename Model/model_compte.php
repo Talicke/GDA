@@ -1,13 +1,13 @@
 <?php
 
     class Compte{
-        private $id_compte;
-        private $mail_compte;
-        private $mdp_compte;
-        private $cle_compte;
-        private $isAuth;
+        private ?int $id_compte;
+        private ?string $mail_compte;
+        private ?string $mdp_compte;
+        private ?string $cle_compte;
+        private ?int $isAuth;
 
-        public function __construct($mail, $mdp, $cle, $auth)
+        public function __construct(?string $mail, ?string $mdp, ?string $cle, ?int $auth)
         {
             $this -> mail_compte = $mail;
             $this -> mdp_compte = $mdp;
@@ -15,19 +15,19 @@
             $this -> isAuth = $auth;
         }
         // GETTER
-        public function getIdCompte():int{
+        public function getIdCompte():?int{
             return $this -> id_compte;
         }
-        public function getMailCompte():string{
+        public function getMailCompte():?string{
             return $this -> mail_compte;
         }
-        public function getMdpCompte():string{
+        public function getMdpCompte():?string{
             return $this -> mdp_compte;
         }
-        public function getCleCompte(){
+        public function getCleCompte():?string{
             return $this -> cle_compte;
         }
-        public function getAuthCompte(){
+        public function getAuthCompte():?int{
             return $this -> isAuth;
         }
         // SETTER

@@ -1,17 +1,23 @@
 <?php
     include "./view/view_reglage.html";
     include "./utils/connecteBDD.php";
-    include "./utils/function.php";
     include "./Model/model_note.php";
+    include "./manager/manager_note.php";
     include "./Model/model_tache.php";
 
     if(!isset($_GET['id'])){
         echo "Aucune id n'est dans l'url";
-        $data = voirDerniereNote($bdd, $_SESSION['id']);
-        $note = new Note($data->contenu_note, $data->date_note, $data->estTerminer, $data->id_cat, $data->id_activite, $data->id_projet, $data->id_compte);
+        $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
+        $data = $note->voirDerniereNote($bdd);
         $note->setIdNote($data->id_note);
+        $note->setContenuNote($data->contenu_note);
+        $note->setDateNote($data->date_note);
+        $note->setEstTerminer($data->estTerminer);
+        $note->setIdCat($data->id_cat);
+        $note->setIdActivite($data->id_activite);
+        $note->setIdProjet($data->id_projet);
     }
-    // var_dump($note);
+    var_dump($note);
     $cat = $note->getIdCat();
 
     
@@ -30,16 +36,16 @@
         include './ctrl/ctrl_reglage_RDV.php';
     }else{
         switch($cat){
-            case $cat === '1' : 
+            case $cat === 1: 
                 include './ctrl/ctrl_reglage_note.php';
                 break ;
-            case $cat === '2':
+            case $cat === 2:
                 include './ctrl/ctrl_reglage_tache.php';
                 break;
-            case $cat === '3':
+            case $cat === 3:
                 include './ctrl/ctrl_reglage_rappel.php';
                 break;
-            case $cat === '4':
+            case $cat === 4:
                 include './ctrl/ctrl_reglage_RDV.php';
                 break;
         }

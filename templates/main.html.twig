@@ -79,9 +79,7 @@
 
     <footer>
     {% block message %}
-        {% apply html_to_markdown %}
-            {{ message }}
-        {% endapply %}
+            {{ message|raw }}
     {% endblock %}
             
     </footer>

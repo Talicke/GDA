@@ -1,15 +1,15 @@
 <?php
     class Note{
-        private $id_note;
-        private $contenu_note;
-        private $date_note;
-        private $estTerminer;
-        private $id_cat;
-        private $id_activite;
-        private $id_projet;
-        private $id_compte;
+        private ?int $id_note;
+        private ?string $contenu_note;
+        private ?string $date_note;
+        private ?int $estTerminer;
+        private ?int $id_cat;
+        private ?int $id_activite;
+        private ?int $id_projet;
+        private ?int $id_compte;
 
-        public function __construct($contenu, $date, $estTerminer, $cat, $activite, $projet, $compte){
+        public function __construct(?string $contenu, ?string $date, ?int $estTerminer, ?int $cat, ?int $activite, ?int $projet, ?int $compte){
             $this -> contenu_note = $contenu;
             $this -> date_note = $date;
             $this -> estTerminer = $estTerminer;
@@ -20,28 +20,28 @@
         }
 
         //GETTER
-        public function getIdNote():int{
+        public function getIdNote():?int{
             return $this -> id_note;
         }
-        public function getContenuNote():string{
+        public function getContenuNote():?string{
             return $this -> contenu_note;
         }
-        public function getDateNote():string{
+        public function getDateNote():?string{
             return $this -> date_note;
         }
-        public function getEstTerminer():int{
+        public function getEstTerminer():?int{
             return $this -> estTerminer;
         }
-        public function getIdCat(){
+        public function getIdCat():?int{
             return $this -> id_cat;
         }
-        public function getIdActivite(){
+        public function getIdActivite():?int{
             return $this -> id_activite;
         }
-        public function getIdProjet(){
+        public function getIdProjet():?int{
             return $this -> id_projet;
         }
-        public function getIdCompte(){
+        public function getIdCompte():?int{
             return $this -> id_compte;
         }
 
@@ -70,53 +70,4 @@
         public function setIdCompte($id):void{
             $this -> id_compte = $id;
         }
-    
-        //methode
-        public function ajoutNote($bdd):void{
-            try{
-                $req = $bdd->prepare('INSERT INTO notes(contenu_note, date_note, estTerminer, id_cat, id_activite, id_projet, id_compte)
-                VALUES (:contenu, :date, :estTerminer, :cat, :activite, :projet, :compte)');
-                $req->execute(array(
-                    ':contenu'=> $this->getContenuNote(),
-                    ':date'=>$this->getDateNote(),
-                    ':estTerminer'=>$this->getEstTerminer(),
-                    ':cat'=>$this->getIdCat(),
-                    ':activite'=>$this->getIdActivite(),
-                    ':projet'=>$this->getIdProjet(),
-                    ':compte'=>$this->getIdCompte(),
-                ));
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
-        }
-
-        public function changerCatNote($bdd, $cat_note){
-            try{
-                $req = $bdd->prepare('UPDATE notes SET id_cat = :cat_note WHERE id_note = :id_note');
-                $req->execute(array(
-                    'cat_note' => $cat_note,
-                    'id_note' =>$this->getIdNote()
-                ));
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
-        }
-        
-        public function modifierNote($bdd){
-            try{
-                $req = $bdd->prepare('UPDATE notes SET contenu_note = :contenu, id_activite = :activite, id_projet = :projet WHERE id_note = :id_note');
-                $req->execute(array(
-                    'contenu' => $this->getContenuNote(),
-                    'activite' => $this->getIdActivite(),
-                    'projet' => $this->getIdProjet(),
-                    'id_note'=> $this->getIdNote()
-                ));
-            }
-                catch(Exception $e){
-                    die('Erreur' .$e->getMessage());
-                }
-        }
-
     }

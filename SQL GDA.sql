@@ -4,8 +4,8 @@ use GDA;
 create table comptes(
 id_compte int auto_increment primary key not null,
 login_compte varchar(50) not null,
-password_compte varchar(50) not null,
-auth_compte varchar(50) not null,
+password_compte varchar(100) not null,
+auth_compte varchar(100) not null,
 estValide bool not null
 )engine=InnoDB;
 

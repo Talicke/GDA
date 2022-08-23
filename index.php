@@ -1,5 +1,6 @@
 <?php
     include './utils/twig.php';
+    include './utils/function.php';
 
     session_start();
 

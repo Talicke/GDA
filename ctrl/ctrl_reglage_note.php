@@ -1,4 +1,5 @@
 <?php
+$contenuNote = $note->getContenuNote();
 
     echo "<section class='regl-form regl-note'>
     <div class='form-regl-sup'>
@@ -29,7 +30,7 @@
     echo 
     "<script>
         let modifNote = document.querySelector('#modifNote');
-        modifNote.value = '$data->contenu_note';
+        modifNote.value = '$contenuNote';
     </script>";
     
 
