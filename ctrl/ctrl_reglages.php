@@ -1,12 +1,11 @@
 <?php
-    include "./view/view_reglage.html";
+    // include "./view/view_reglage.html";
     include "./utils/connecteBDD.php";
     include "./Model/model_note.php";
     include "./manager/manager_note.php";
     include "./Model/model_tache.php";
 
     if(!isset($_GET['id'])){
-        echo "Aucune id n'est dans l'url";
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
         $data = $note->voirDerniereNote($bdd);
         $note->setIdNote($data->id_note);
@@ -17,7 +16,6 @@
         $note->setIdActivite($data->id_activite);
         $note->setIdProjet($data->id_projet);
     }
-    var_dump($note);
     $cat = $note->getIdCat();
 
     
@@ -51,7 +49,7 @@
         }
     }
 
-    echo '<button type="submit" name="valider" class="submit-button">Valider</button>';
-    echo '</form>'; 
+    // echo '<button type="submit" name="valider" class="submit-button">Valider</button>';
+    // echo '</form>'; 
 
 ?>

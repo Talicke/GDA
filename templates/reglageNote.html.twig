@@ -1,0 +1,38 @@
+{% extends 'reglages.html.twig' %}
+
+{% block content %}
+{{parent()}}
+
+<section class='regl-form regl-note valoriser'>
+    <div class='form-regl-sup'>
+        <div id="categorisation">
+            <div class='dropdown'>
+                <h3>Activités :</h3>
+                <form action='' method='post' class=''>
+                <select name='activite' id='select-acti'>
+                    <option value='aucune'>Choisissez une activité</option>
+                    <option value='acti-choix1'>valeur 1</option>
+                    <option value='acti-choix2'>valeur 2</option>
+                    <option value='acti-choix3'>valeur 3</option>
+                </select>
+            </div>
+
+            <div class='dropdown'>
+                <h3>Projets :</h3>
+                <select name='projet' id='select-proj'>
+                    <option value='aucune'>Choisissez un projet</option>
+                    <option value='proj-valeur 1'>valeur 1</option>
+                    <option value='proj-valeur 2'>valeur 2</option>
+                    <option value='proj-valeur 3'>valeur 3</option>
+                </select>
+            </div>
+        </div>
+    
+        <div id="supprarchiv">
+            <button type="submit" class="btn-med btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
+            <button type="submit" class="btn-med btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
+        </div>
+    </div>
+        <textarea name="modifNote" id="modifNote"></textarea>
+
+{% endblock %}

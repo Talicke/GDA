@@ -1,0 +1,17 @@
+{% extends 'main.html.twig' %}
+
+{% block css %}
+{{parent()}}
+    <link rel="stylesheet" href="../asset/style/reglage.css">
+{% endblock %}
+
+{% block content %}
+        <nav class="nav-regl">
+            <form action="" method="post" class="nav-regl">
+                <button class="bouton-regl" id="ong-regl-note" type="submit" name="regl-note">Note</button>
+                <button class="bouton-regl" id="ong-regl-tache" type="submit" name="regl-tache">Tache</button>
+                <button class="bouton-regl" id="ong-regl-rappel" type="submit" name="regl-rappel">Rappel</button>
+                <button class="bouton-regl" id="ong-regl-RDV" type="submit" name="regl-RDV">RDV</button>
+            </form>
+        </nav>
+{% endblock content %}

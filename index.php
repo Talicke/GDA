@@ -36,7 +36,7 @@
             break;
 
         case $path === '/newNote' : 
-            include "./ctrl/ctrl_new_note.php";
+            include "./ctrl/ctrl_nouv_note.php";
             $titre = "Prise de note";
             break ;
 
