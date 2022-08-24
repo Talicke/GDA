@@ -27,13 +27,6 @@ $contenuNote = $note->getContenuNote();
     // echo "</section>";
 
 
-    echo 
-    "<script>
-        let modifNote = document.querySelector('#modifNote');
-        modifNote.value = '$contenuNote';
-    </script>";
-    
-
     if(isset($_POST['valider'])){
         // var_dump($note);
         $note->setContenuNote($_POST['modifNote']);
@@ -42,6 +35,7 @@ $contenuNote = $note->getContenuNote();
     }
 
     echo $twig->render('reglageNote.html.twig', [
-
+        'titre' => 'Reglage note',
+        'valueNote' => $contenuNote
     ]);
 ?>

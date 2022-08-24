@@ -8,13 +8,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block css %}
-            <link rel="stylesheet" href="./asset/style/style.css">
+            <link rel="stylesheet" href="./asset/style2/style.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
         {% endblock css %}
         <title>GDA</title>
     </head>
 
 {% endblock head %}
+
+{% block body %}
 
 {% block header %}
     <header>
@@ -23,48 +25,52 @@
     </header>
 {% endblock header %}
 
-{% block body %}
+
 
 {% block nav %}
 
-    <nav class="nav-princ collapse-height">
+    <nav id="nav-princ" class="collapse-height">
         <form method="post" action="">
-        <div class="navbar-sup">
-            <button name="compte" type="submit" class="onglet-up onglet1">Compte</button>
-            <button name="activites" type="submit" class="onglet-up onglet2">Activités</button>
-            <button name="projets" type="submit" class="onglet-up onglet3">Projets</button>
-        </div>
-        <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
-        <div class="navbar-down">
-            <button name="rdv" type="submit" class="onglet-down onglet8">RDV</button>
-            <button name="rappel" type="submit" class="onglet-down onglet7">Rappel</button>
-            <button name="tache" type="submit" class="onglet-down onglet6">Taches</button>
-            <button name="note" type="submit" class="onglet-down onglet5">Notes</button>
-        </div>
+            <div id='nav-lat' class="flex-col">
+                <div class="navbar-sup">
+                    <button name="compte" type="submit" class="onglet-up" id="onglet1">Compte</button>
+                    <button name="activites" type="submit" class="onglet-up"  id="onglet2">Activités</button>
+                    <button name="projets" type="submit" class="onglet-up" id="onglet3">Projets</button>
+                </div>
+                <button type="submit" class="nav-compte-mid" id="onglet4"><i class="fa-solid fa-circle-plus"></i></button>
+                <div class="navbar-down">
+                    <button name="rdv" type="submit" class="onglet-down" id="onglet8">RDV</button>
+                    <button name="rappel" type="submit" class="onglet-down" id="onglet7">Rappel</button>
+                    <button name="tache" type="submit" class="onglet-down" id="onglet6">Taches</button>
+                    <button name="note" type="submit" class="onglet-down" id="onglet5">Notes</button>
+                </div>
+            </div>
         </form>
     </nav>
 
-    <nav class="nav-princ hidden-height">
+    <nav id="nav-princ"class="hidden-height">
         <form method="post" action="">
-        <div id="navbar-sup-collapse">
-            <button type="submit" class="onglet-up onglet-collapse-sup" id="Mcompte"><i class="fa-solid fa-bars"></i></button>
-            <div class="navbar-sup" id="extend-nav-sup">
-                <button name="compte" type="submit" class="onglet-up onglet1">Compte</button>
-                <button name="activites" type="submit" class="onglet-up onglet2">Activités</button>
-                <button name="projets" type="submit" class="onglet-up onglet3">Projets</button>
+        <div id='nav-lat' class="flex-col">
+            <div id="navbar-sup-collapse">
+                <button type="submit" class="onglet-up onglet-collapse-sup" id="Mcompte"><i class="fa-solid fa-bars"></i></button>
+                <div class="navbar-sup" id="extend-nav-sup">
+                    <button name="compte" type="submit" class="onglet-up" id="onglet1">Compte</button>
+                    <button name="activites" type="submit" class="onglet-up" id="onglet2">Activités</button>
+                    <button name="projets" type="submit" class="onglet-up" id="onglet3">Projets</button>
+                </div>
             </div>
-        </div>
-        <button type="submit" class="nav-compte-mid onglet4"><i class="fa-solid fa-circle-plus"></i></button>
-        <div id="navbar-down-collapse">
-            <button type="submit" class="onglet-down onglet-collapse-down" id="Mliste"><i class="fa-solid fa-bars"></i></button>
-            <div class="navbar-down" id="extend-nav-down">
-                <button name="rdv" type="submit" class="onglet-down onglet8">RDV</button>
-                <button name="rappel" type="submit" class="onglet-down onglet7">Rappel</button>
-                <button name="tache" type="submit" class="onglet-down onglet6">Taches</button>
-                <button name="note" type="submit" class="onglet-down onglet5">Notes</button>
+            <button type="submit" class="nav-compte-mid" id="onglet4"><i class="fa-solid fa-circle-plus"></i></button>
+            <div id="navbar-down-collapse">
+                <button type="submit" class="onglet-down onglet-collapse-down" id="Mliste"><i class="fa-solid fa-bars"></i></button>
+                <div class="navbar-down" id="extend-nav-down">
+                    <button name="rdv" type="submit" class="onglet-down" id="onglet8">RDV</button>
+                    <button name="rappel" type="submit" class="onglet-down" id="onglet7">Rappel</button>
+                    <button name="tache" type="submit" class="onglet-down" id="onglet6">Taches</button>
+                    <button name="note" type="submit" class="onglet-down" id="onglet5">Notes</button>
+                </div>
             </div>
         </form>
-        </div>
+        
     </nav>
 
 {% endblock nav %}

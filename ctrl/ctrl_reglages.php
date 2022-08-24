@@ -17,6 +17,7 @@
         $note->setIdProjet($data->id_projet);
     }
     $cat = $note->getIdCat();
+    $contenuNote = $note->getContenuNote();
 
     
 
