@@ -1,5 +1,5 @@
 {% macro input(nom, label, type) %} 
-    <div class="form_input">
+    <div class="form-input flex-col">
         <label for="{{ nom }}">{{ label }}</label>
         <input type="{{type ? type : 'text'}}" id="{{ name }}" name="{{ nom }}">
     </div>
