@@ -1,0 +1,16 @@
+#content{
+    flex-direction: column;
+}
+
+.valoriser{
+    width: 90%;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+#addNote{
+    width: 90%;
+    height:90%;
+}
+

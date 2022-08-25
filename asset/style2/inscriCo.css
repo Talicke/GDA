@@ -1,5 +1,12 @@
 #form-connexion{
     justify-content: center;
     align-content: center;
-    width: 40vw;
+    width: 20vw;
+    font-size: 1.2em;
+}
+
+#form-valide{
+    justify-content: space-between;
+    align-items: center;
+    margin: 10%;
 }

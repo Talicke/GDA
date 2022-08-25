@@ -1,14 +1,20 @@
 {% extends 'main.html.twig' %}
+{% import './macro/macro.html.twig' as mac %}
 
+{% block css %}
+    {{parent()}}
+    <link rel="stylesheet" href="./asset/style2/nouvNote.css">
+{% endblock css %}
 
 {% block content %}
     
-        <div class="valoriser">
+            <form method="post" action="" class="valoriser flex-row">
+                    {{mac.texteArea('addNote')}}
+            </form>
+
             <form method="post" action="">
-                    <textarea name="addNote" placeholder="Ecrivez une note" id="addNote"></textarea>
-                </div>
                 <button type="submit" name="valider" class="submit-button">Valider</button>
             </form>
-        </div>
+        
 {% endblock content %}
 

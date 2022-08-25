@@ -46,8 +46,26 @@ input{
     border-radius: 10px;
     font-size: 1.2em;
     padding: 1%;
-    width: 90%;
     
+}
+
+textarea{
+    background-color: #CDD0D2;
+    border-radius: 10px;
+    font-size: 1.8em;
+    padding: 1%
+}
+
+a{
+    color: #394984;
+}
+
+a:visited{
+    color: #CDD0D2
+}
+
+a:hover{
+    color: #8E99C3;
 }
 
 
@@ -263,16 +281,25 @@ input{
 
 .submit-button{
     background-color: #394984;
-    width: 150px;
-    height: 50px;
+    width: 120px;
+    height: 40px;
     border-radius: 15px;
     box-shadow:  inset 5px 0px 30px  #00000040,  inset -5px 0px 30px  #ffffff40;
     color:#ffffff;
     border: 0px;
 
     /* position: relative; */
-    font-size: 1.3em;
+    font-size: 1.1em;
     align-self: end;
+}
+
+.error{
+    padding: 5%;
+    width: 100%;
+    background-color: #f39c12;
+    border: 2px solid #fd7e14;
+    color: #ffffff;
+    border-radius: 15px;
 }
 
 
