@@ -12,7 +12,7 @@ body{
     font-size: 16px;
     display: grid;
     grid-template-columns: auto 75px;
-    grid-template-rows: 20vh 70vh 10vh;
+    grid-template-rows: 20vh 80vh;
     background-color: #333333;
 }
 

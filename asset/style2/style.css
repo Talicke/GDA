@@ -14,7 +14,7 @@ body{
     font-size: 16px;
     display: grid;
     grid-template-columns: auto 75px;
-    grid-template-rows: 20vh 70vh 10vh;
+    grid-template-rows: 20vh 80vh;
     justify-items: center;
     align-items: center;
     background-color: #333333;
@@ -53,7 +53,9 @@ textarea{
     background-color: #CDD0D2;
     border-radius: 10px;
     font-size: 1.8em;
-    padding: 1%
+    padding: 1%;
+    box-shadow: inset 0px 4px 4px #00000040;
+    resize: none;
 }
 
 a{
@@ -287,10 +289,7 @@ a:hover{
     box-shadow:  inset 5px 0px 30px  #00000040,  inset -5px 0px 30px  #ffffff40;
     color:#ffffff;
     border: 0px;
-
-    /* position: relative; */
     font-size: 1.1em;
-    align-self: end;
 }
 
 .submit-button:hover{

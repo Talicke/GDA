@@ -1,31 +1,36 @@
 #content{
     flex-direction: column;
-}
-
-form{
-    width: 95%;
-}
-
-#end-form{
-    justify-content: flex-end;
-}
-
-.valoriser{
-    height: 60%;
     justify-content: center;
     align-items: center;
 }
 
-.flew-row{
+#form-haut{
+    width: 90%;
+    height: 70%;
     justify-content: center;
+    align-items: center;
 }
 
 #addNote{
     width: 90%;
-    height:90%;
+    height: 85%;
 }
 
-.submit-boutton{
-    margin-left: 10vw;
+#form-bas{
+    width: 80%;
+    height: 15%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#message{
+    width: 70%;
+    
+    border: 5px solid red;
+}
+
+form{
+    width: 95%;
+    height: 95%;
 }
 
