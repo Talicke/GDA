@@ -293,6 +293,12 @@ a:hover{
     align-self: end;
 }
 
+.submit-button:hover{
+    background-color: #8E99C3;
+    color:#212529;
+}
+
+
 .error{
     padding: 5%;
     width: 100%;

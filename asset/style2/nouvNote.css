@@ -2,15 +2,30 @@
     flex-direction: column;
 }
 
+form{
+    width: 95%;
+}
+
+#end-form{
+    justify-content: flex-end;
+}
+
 .valoriser{
-    width: 90%;
     height: 60%;
     justify-content: center;
     align-items: center;
 }
 
+.flew-row{
+    justify-content: center;
+}
+
 #addNote{
     width: 90%;
     height:90%;
+}
+
+.submit-boutton{
+    margin-left: 10vw;
 }
 
