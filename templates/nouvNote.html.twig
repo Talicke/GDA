@@ -7,14 +7,14 @@
 {% endblock css %}
 
 {% block content %}
-<form method="post" action="">
+<form method="post" action="" class="flex-col">
     <div id="form-haut" class="valoriser flex-row">
-        {{mac.texteArea('addNote')}}
+        {{mac.texteArea('addNote', "Ecrivez une note ici", null)}}
     </div>
 
     <div id ="form-bas" class="flex-row">
         <div id="message">
-            {{message}}
+            {{message|raw}}
         </div>
         <button type="submit" name="valider" class="submit-button">Valider</button>
     </div>

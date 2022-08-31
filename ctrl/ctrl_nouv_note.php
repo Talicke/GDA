@@ -3,6 +3,11 @@
     include "./Model/model_note.php";
     include "./manager/manager_note.php";
     // include "./view/view_accueil.html";
+
+      /*------------------------------------------------
+                        VARIABLES
+    ------------------------------------------------*/
+    $message = "";
     
 
     if(isset($_POST['valider'])){
@@ -12,12 +17,13 @@
             $note->ajoutNote($bdd);
             header('Location: ./reglages');
         }else{
-            echo "Aucune note à enregistrer";
+            $message = "<div class='error'>Aucune note à enregistrer</div>";
         }
     }
 
     echo $twig->render('nouvNote.html.twig', [
-        'titre' => 'Nouvelle note'
+        'titre' => 'Nouvelle note',
+        "message" => $message
     ])
 
 ?>

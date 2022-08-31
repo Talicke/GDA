@@ -17,20 +17,20 @@
 }
 
 #form-bas{
-    width: 80%;
     height: 15%;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 #message{
-    width: 70%;
-    
-    border: 5px solid red;
+    width: 30%;
+    height: 50%;
+    text-align: center;
 }
 
 form{
     width: 95%;
     height: 95%;
+    justify-content: space-evenly;
 }
 

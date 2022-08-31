@@ -5,6 +5,6 @@
     </div>
 {% endmacro %}
 
-{% macro texteArea(nom, value) %}
-        <textarea id="{{ nom }}" name="{{ nom }}">{{ value }}</textarea>
+{% macro texteArea(nom, conseil, value) %}
+        <textarea id="{{ nom }}" name="{{ nom }}" placeholder="{{ conseil }}">{{ value }}</textarea>
 {% endmacro %}
