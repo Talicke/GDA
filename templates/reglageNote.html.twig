@@ -1,15 +1,18 @@
 {% extends 'reglages.html.twig' %}
 {% import './macro/macro.html.twig' as mac %}
 
+{% block css %}
+{{parent()}}
+<link rel='stylesheet' href='./asset/style2/reglageNote.css'>
+{% endblock css %}
+
 {% block content %}
 {{parent()}}
-
-<section class='regl-form regl-note valoriser'>
-    <div class='form-regl-sup'>
-        <div id="categorisation" class="flex-row">
+<form action='' method='post' class='valoriser flex-col'>
+    <div id="form-haut" class="flex-row">
+        <div id="dropdown-group" class="flex-row">
             <div class='dropdown'>
                 <h3>Activités :</h3>
-                <form action='' method='post' class=''>
                 <select name='activite' id='select-acti'>
                     <option value='aucune'>Choisissez une activité</option>
                     <option value='acti-choix1'>valeur 1</option>
@@ -28,15 +31,16 @@
                 </select>
             </div>
         </div>
-    
-        <div id="supprarchiv" class="flex-row">
-            <button type="submit" class="btn-med btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
-            <button type="submit" class="btn-med btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
+
+        <div id="bouton-group" class="flex-row">
+            <button type="submit" class="btn-med" id="btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
+            <button type="submit" class="btn-med" id="btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
         </div>
     </div>
-    
+    <div id="form-bas" class="flex-row">
         {{mac.texteArea('modifNote',null, valueNote)}}
-</section>
+    </div>
+</form>
     
 
 {% endblock %}
