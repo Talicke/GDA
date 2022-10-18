@@ -3,7 +3,6 @@
     include "./utils/connecteBDD.php";
     include "./Model/model_note.php";
     include "./manager/manager_note.php";
-    include "./Model/model_tache.php";
 
     if(!isset($_GET['id'])){
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);

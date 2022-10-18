@@ -17,10 +17,12 @@
     height: 90%;
 }
 
-#validation{
+#form-droite{
     width: 80%;
-    height: 10%;
-    margin: auto;
-    align-items: flex-start;
-    justify-content: flex-end;
+    height: 100%;
+}
+
+#form-gauche{
+    width: 20%;
+    height: 100%;
 }

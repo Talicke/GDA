@@ -1,27 +1,27 @@
 <?php
     class Tache{
-        private $id_tache;
-        private $date_tache;
-        private $duree_tache;
-        private $id_note;
+        private ?int $id_tache;
+        private ?string $date_tache;
+        private ?string $duree_tache;
+        private ?int $id_note;
 
-        public function __construct($date, $duree, $note){
-            $this->date_tache = $date;
-            $this->duree_tache = $duree;
-            $this->id_note = $note;
+        public function __construct(?string $date, ?string $duree, ?int $note){
+            $this -> date_tache = $date;
+            $this -> duree_tache = $duree;
+            $this -> id_note = $note;
         }
 
         //GETTER
-        public function getIdTache():int{
+        public function getIdTache():?int{
             return $this->id_tache;
         }
-        public function getDateTache(){
+        public function getDateTache():?string{
             return $this->date_tache;
         }
-        public function getDureeTache():int{
+        public function getDureeTache():?int{
             return $this->duree_tache;
         }
-        public function getIdNote():int{
+        public function getIdNote():?int{
             return $this->id_note;
         }
 
@@ -38,36 +38,6 @@
         public function setIdNote($note):void{
             $this->id_note = $note;
         }
-
-        //methode
-        public function ajoutTache($bdd):void{
-            try{
-                $req = $bdd->prepare('INSERT INTO taches (date_tache, duree_tache, id_note) VALUES (:date, :duree, :note)');
-                $req->execute(array(
-                    ':date' => $this->getDateTache(),
-                    ':duree' => $this->getDureeTache(),
-                    ':note' => $this->getIdNote()
-                ));
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
-        }
-
-        public function voirTacheParNote($bdd):obj{
-            try{
-                $req=$bdd->prepare('SELECT * FROM taches WHERE id_note = :note)');
-                $req->execute(array(
-                    ':note' => $this->getIdNote()
-                ));
-                $data = $req -> fetch(PDO::FETCH_OBJ);
-                return $data;
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
-        }
-
     }
 
 ?>

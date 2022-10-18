@@ -1,13 +1,10 @@
 <?php
+include "./Model/model_tache.php";
+include "./manager/manager_tache.php";
 
-    echo "<div class='regl-form regl-tache'>";
-    include './view/view_reglage_tache.html';
-    echo "</div>";
-
-    echo 
-    "<script>
-        let modifNote = document.querySelector('#modifTache');
-        modifNote.value = '$data->contenu_note';
-    </script>";
+echo $twig->render('reglageTache.html.twig', [
+    'titre' => 'Reglage tache',
+    'valueNote' => $contenuNote
+]);
 
 ?>

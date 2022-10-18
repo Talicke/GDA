@@ -1,0 +1,48 @@
+{% extends 'reglages.html.twig' %}
+{% import './macro/macro.html.twig' as mac %}
+
+{% block css %}
+{{parent()}}
+<link rel='stylesheet' href='./asset/style2/reglageTache.css'>
+{% endblock css %}
+
+{% block content %}
+
+    {% block navireglage %}
+    {{parent()}}
+    {% endblock navireglage %}
+
+<form action='' method='post' class='valoriser flex-row'>
+
+    <div id="form-droite">
+        {% block triage %}
+        {{parent()}}
+        {% endblock triage %}
+
+        {% block formulaire %}
+        <div id="form-bas" class="flex-row">
+            {{mac.texteArea('modifNote',null, valueNote)}}
+        </div>
+        {% endblock formulaire %}
+    </div>
+
+    <div id="form-gauche">
+        <div id="histo-tache">
+            <h3>Historique :</h3>
+            <div id="conteneur-histo">
+                <div class="itération">
+                    <p>le: 01/01/2022</p>
+                    <p>de: 12h à 14h</p>
+                </div>
+            </div>
+            <button type="submit" class="" name="new_iter" id="new_iter">Nouvelle itération</button>
+        </div>
+    </div>
+
+</form>
+
+<form id="validation" class="flex-row">
+    <input name="valider" type="submit" value="valider" class="submit-button">
+</form>
+
+{% endblock content %}

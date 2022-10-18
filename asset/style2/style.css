@@ -14,7 +14,7 @@ body{
     font-size: 16px;
     display: grid;
     grid-template-columns: auto 75px;
-    grid-template-rows: 20vh 80vh;
+    grid-template-rows: 15vh 85vh;
     justify-items: center;
     align-items: center;
     background-color: #333333;

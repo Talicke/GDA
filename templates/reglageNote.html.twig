@@ -7,40 +7,27 @@
 {% endblock css %}
 
 {% block content %}
-{{parent()}}
-<form action='' method='post' class='valoriser flex-col'>
-    <div id="form-haut" class="flex-row">
-        <div id="dropdown-group" class="flex-row">
-            <div class='dropdown'>
-                <h3>Activités :</h3>
-                <select name='activite' id='select-acti'>
-                    <option value='aucune'>Choisissez une activité</option>
-                    <option value='acti-choix1'>valeur 1</option>
-                    <option value='acti-choix2'>valeur 2</option>
-                    <option value='acti-choix3'>valeur 3</option>
-                </select>
-            </div>
 
-            <div class='dropdown'>
-                <h3>Projets :</h3>
-                <select name='projet' id='select-proj'>
-                    <option value='aucune'>Choisissez un projet</option>
-                    <option value='proj-valeur 1'>valeur 1</option>
-                    <option value='proj-valeur 2'>valeur 2</option>
-                    <option value='proj-valeur 3'>valeur 3</option>
-                </select>
-            </div>
-        </div>
+    {% block navireglage %}
+    {{parent()}}
+    {% endblock navireglage %}
 
-        <div id="bouton-group" class="flex-row">
-            <button type="submit" class="btn-med" id="btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
-            <button type="submit" class="btn-med" id="btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
-        </div>
-    </div>
+<form action='' method='post' class='valoriser'>
+
+    {% block triage %}
+    {{parent()}}
+    {% endblock triage %}
+
+    {% block formulaire %}
     <div id="form-bas" class="flex-row">
         {{mac.texteArea('modifNote',null, valueNote)}}
     </div>
-</form>
-    
+    {% endblock formulaire %}
 
-{% endblock %}
+</form>
+
+<form id="validation" class="flex-row">
+    <input name="valider" type="submit" value="valider" class="submit-button">
+</form>
+
+{% endblock content %}

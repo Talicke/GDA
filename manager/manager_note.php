@@ -1,6 +1,7 @@
 <?php
 
     class ManagerNote extends Note{
+        
         public function ajoutNote($bdd):void{
             try{
                 $contenu = $this->getContenuNote();
