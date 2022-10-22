@@ -1,12 +1,10 @@
 <?php
+include "./Model/model_RDV.php";
+include "./manager/manager_RDV.php";
 
-    echo "<div class='regl-form regl-RDV'>";
-    include "./view/view_reglage_RDV.html";
-    echo "</div>";
+echo $twig->render('reglageRDV.html.twig', [
+    'titre' => 'Reglage RDV',
+    'valueNote' => $contenuNote
+]);
 
-    echo 
-    "<script>
-        let modifNote = document.querySelector('#modifRDV');
-        modifNote.value = '$data->contenu_note';
-    </script>";
 ?>

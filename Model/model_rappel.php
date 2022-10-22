@@ -1,27 +1,27 @@
 <?php
     class Rappel{
-        private $id_rappel;
-        private $date_rappel;
-        private $heure_rappel;
-        private $id_note;
+        private ?int $id_rappel;
+        private ?string $date_rappel;
+        private ?string $heure_rappel;
+        private ?int $id_note;
 
-        public function __construct($date, $duree, $note){
+        public function __construct(?string $date, ?string $duree, ?int $note){
             $this->date_rappel = $date;
             $this->duree_rappel = $duree;
             $this->id_note = $note;
         }
 
         //GETTER
-        public function getIdRappel():int{
+        public function getIdRappel():?int{
             return $this->id_rappel;
         }
-        public function getDateRappel(){
+        public function getDateRappel():?string{
             return $this->date_rappel;
         }
-        public function getHeureRappel(){
+        public function getHeureRappel():?string{
             return $this->heure_rappel;
         }
-        public function getIdNote(){
+        public function getIdNote():?int{
             return $this->id_note;
         }
 
@@ -37,21 +37,6 @@
         }
         public function setIdNote($note):void{
             $this->id_note = $note;
-        }
-
-        //methode
-        public function ajoutRappel($bdd):void{
-            try{
-                $req = $bdd->prepare('INSERT INTO rappels (date_rappel, duree_rappel, id_note) VALUES (:date, :heure, :note)');
-                $req->execute(array(
-                    ':date' => $this->getDateRappel(),
-                    ':heure' => $this->getHeureRappel(),
-                    ':note' => $this->getIdNote()
-                ));
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
         }
 
     }

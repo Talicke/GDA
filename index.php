@@ -113,5 +113,4 @@
     if(isset($_POST['note'])){
         header('Location: ./notes');
     }
-
 ?>

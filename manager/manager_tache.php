@@ -1,5 +1,5 @@
 <?php
-    class ManagerTache extends tache{
+    class ManagerTache extends Tache{
 
         public function ajoutTache($bdd):void{
             try{

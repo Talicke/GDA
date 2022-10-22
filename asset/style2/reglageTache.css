@@ -59,6 +59,11 @@
     align-self:flex-end
 }
 
+#new_iter:hover{
+    background-color: #8E99C3;
+    color: #212529;
+}
+
 #validation{
     width: 80%;
     height: 10%;

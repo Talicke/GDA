@@ -1,0 +1,164 @@
+.valoriser{
+    width: 80%;
+    height: 70%;
+    margin-top: -1px;
+    align-items: center;
+}
+
+#form-bas{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90%;
+    justify-content: space-around;
+}
+
+#modifNote{
+    width: 90%;
+    height: 60%;
+}
+
+#lieuRDV{
+    width: 90%;
+    height: 15%;
+}
+
+#form-droite{
+    width: 75%;
+    height: 100%;
+}
+
+#form-gauche{
+    width: 25%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#validation{
+    width: 80%;
+    height: 10%;
+    margin: auto;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+
+#datepicker{
+    margin: auto;
+}
+
+.ui-widget.ui-widget-content{
+    margin:auto auto;
+    border-radius: 10%;
+    padding:2%;
+    padding-top: 4%;
+    width: 85%;
+    background-color: #CDD0D2;
+}
+
+.ui-datepicker .ui-datepicker-title select{
+    font-family: 'Neucha', cursive;
+}
+
+thead{
+    font-size: 1em;
+}
+
+.ui-corner-all{
+    background-color: #CDD0D2;
+}
+
+.ui-datepicker .ui-datepicker-header{
+    background-color: #394984;
+    border: 2px solid #333333;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active{
+    background-color: #394984;
+    border: 1px solid #212529;
+    color: #CDD0D2;
+    
+}
+
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited,
+a.ui-button:hover,
+a.ui-button:focus {
+	color: #CDD0D2;
+	text-decoration: none;
+}
+
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+	border: 1px solid #8E99C3;
+	background: #333333;
+	font-weight: normal;
+	color: #CDD0D2;
+}
+
+.ui-state-default{
+    display: flex;
+    border: 2px solid #212529;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 1em;
+    background-color: #394984;
+}
+
+.ui-state-default:hover{
+    background-color: #8E99C3;
+    color: #212529;
+}
+
+.timepicker, .timepicker1heures, .timepicker1minutes {
+    background-color: #394984;
+    border: 3px solid #333333;
+    border-radius: 10px;
+    text-align: center;
+    color:#CDD0D2;
+    font-size: 0.8em;
+    margin: auto;
+    width: 35%;
+}
+
+.ui-menu-item .ui-corner-all{
+    background-color: #394984;
+    color: #CDD0D2;
+    margin: 10px;
+    border: 2px solid #212529;
+}
+
+.ui-timepicker-container{
+    border:none !important;
+    background-color: #CDD0D2 !important;
+    height: 18% !important;
+    width: 8% !important;
+}
+
+.timepicker-container{
+    height: 20%;
+}
+
+.timepicker-subcontainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #CDD0D2;
+    width: 80%;
+    height: 50%;
+    padding: 2%;
+    border-radius: 10px;
+    color:#212529;
+    font-size: 2em;
+    margin: auto;
+}
