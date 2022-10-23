@@ -1,0 +1,65 @@
+{% extends 'main.html.twig' %}
+{% import './macro/macro.html.twig' as mac %}
+
+{% block css %}
+    {{parent()}}
+    <link rel="stylesheet" href="./asset/style2/compte.css">
+{% endblock css %}
+
+
+
+{% block content %}
+    <form id="form-gauche" class="flex-col">
+        <div id="modifForm" class="flex-col">
+            <div>
+                <h4>Modifier votre e-mail</h4>
+                <div id="nouveauMail" class="valoriser flex-col">
+                    {{mac.input('nouvMail', 'nouvel e-mail : ', 'mail')}}
+                    {{mac.input('nouvMailConf', 'confirmer l\'email : ', 'mail')}}
+                </div>
+            </div>
+            <div>
+                <h4>Modifier votre mot de passe</h4>
+                <div id="nouveauMdp" class="valoriser flex-col">
+                    {{mac.input('nouvMdp', 'nouveau mot de passe : ', 'password')}}
+                    {{mac.input('nouvMdpConf', 'confirmer le nouveau mot de passe : ', 'password')}}
+                </div>
+            </div>
+        </div>
+        <div id="validation" class="valoriser flex-col">
+            {{mac.input('Mdp', 'tapez votre mot de passe actuel : ', 'password')}}
+            <input type="submit" value="Valider">
+        </div>
+    </form>
+
+    <div id="form-droite">
+        <nav class="nav-regl">
+            <form method="post" action="">
+                <button class="bouton-regl" id="ong-regl-acti" type="submit" name="regl-acti">Activités</button>
+                <button class="bouton-regl" id="ong-regl-proj" type="submit" name="regl-proj">Projets</button>
+            </form>
+        </nav>
+        <div id="newCat" class="valoriser">
+        <form action="" method="POST">
+            <div class="flex-row valoriser-bleu">
+                <input type='text' name='nomActivite' id='nom_acti_form' placeholder='Créez une nouvelle activité'>
+                <input type='text' name='tempsActivite' id='temps_acti_form' placeholder='En heure'>
+                <select name='selectFreq' id='selectFreq'>
+                    {% for freq in freqs %}
+                        <option value= "{{freq.id_freq}}">{{ freq.intituler_freq }}</option>
+                    {% endfor %}
+                </select>
+                <button type='submit' name='nouvActi' id="nouvActi">+</button>
+            </div>
+            {% for activite in activites %}
+                <div class="flex-row valoriser-bleu">
+                    <p class="valoriser-gris" id="nom_acti">{{activite.nom_activite}}</p>
+                    <p class="valoriser-gris" id="temps_acti">{{activite.temps_activite}}h</p>
+                    <p class="valoriser-gris" id="freq_acti">{{activite.intituler_freq}}</p>
+                </div>
+            {% endfor %}
+            
+        </form>
+    </div>
+
+{% endblock content %}

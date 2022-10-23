@@ -41,6 +41,12 @@ header h1{
     margin-right: 10%;
 }
 
+h4{
+    font-family: 'Cabin Sketch', cursive;
+    font-size: 1.5em;
+    color:#CDD0D2
+}
+
 input, select{
     background-color: #CDD0D2;
     border-radius: 10px;
@@ -51,8 +57,6 @@ input, select{
 
 select{
     border-radius: 5px;
-    margin-right: 100px;
-    padding-right: 20%;
 }
 
 textarea{
@@ -207,6 +211,21 @@ a:hover{
     border: 2px solid #394984;
     border-radius: 20px;
     box-shadow: 0px 4px 4px #00000040;
+}
+
+.valoriser-bleu{
+    background-color: #394984;
+    padding: 1%;
+    margin: auto;
+    border: 2px solid #333333;
+    border-radius: 20px;
+}
+
+.valoriser-gris{
+    color:#212529;
+    background-color: #CDD0D2;
+    padding: 1%;
+    border-radius: 10px
 }
 
 .form-input{

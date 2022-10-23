@@ -1,12 +1,12 @@
 <?php
     class Activite{
-        private $id_activite;
-        private $nom_activite;
-        private $temps_activite;
-        private $id_compte;
-        private $id_frequence;
+        private ?int $id_activite;
+        private ?string $nom_activite;
+        private ?int $temps_activite;
+        private ?int $id_compte;
+        private ?int $id_frequence;
 
-        public function __construct($nom, $temps, $compte, $frequence)
+        public function __construct(?string $nom, ?int $temps, ?int $compte, ?int $frequence)
         {
             $this->nom_activite = $nom;
             $this->temps_activite = $temps;
@@ -14,19 +14,19 @@
             $this->id_frequence = $frequence;
         }
         // GETTER
-        public function getIdActivite():int{
+        public function getIdActivite():?int{
             return $this->id_activite;
         }
-        public function getNomActivite():string{
+        public function getNomActivite():?string{
             return $this->nom_activite;
         }
-        public function getTempsActivite():int{
+        public function getTempsActivite():?int{
             return $this->temps_activite;
         }
-        public function getCompteActivite():int{
+        public function getCompteActivite():?int{
             return $this->id_compte;
         }
-        public function getFrequenceActivite(){
+        public function getFrequenceActivite():?int{
             return $this->id_frequence;
         }
         
@@ -45,40 +45,5 @@
         }
         public function setFrequenceActivite($frequence):void{
             $this->id_frequence = $frequence;
-        }
-
-
-        // Méthodes
-        public function ajoutActivite($bdd):void{
-            try{
-                $req = $bdd->prepare('INSERT INTO activites(nom_activite, temps_activite, id_compte, id_freq)
-                VALUES (:nom, :temps, :compte, :freq)');
-                $req->execute(array(
-                    ':nom'=> $this->getNomActivite(),
-                    ':temps' => $this->getTempsActivite(),
-                    ':compte' => $this->getCompteActivite(),
-                    ':freq' => $this->getFrequenceActivite()
-                ));
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
-        }
-
-        public function voirToutActiviteParCompte($bdd):array{
-            try{
-                $req = $bdd->prepare('SELECT id_activite, nom_activite, temps_activite, id_compte, intituler_freq 
-                FROM activites, frequences 
-                WHERE activites.id_freq = frequences.id_freq 
-                AND id_compte = :compte');
-                $req->execute(array(
-                    ':compte' => $this->getCompteActivite()
-                ));
-                $data = $req->fetchall(PDO::FETCH_OBJ);
-                return $data;
-            }
-            catch(Exception $e){
-                die('Erreur '.$e->getMessage());
-            }
         }
     }
