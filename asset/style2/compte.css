@@ -25,7 +25,6 @@ input, select{
 #form-droite{
     width: 50%;
     height: 90%;
-    border: 1px lightblue solid;
 }
 
 #newCat{
@@ -41,6 +40,7 @@ input, select{
 #ong-regl-acti{
     position: relative;
     z-index:2;
+    margin-left: 6%;
 }
 
 #ong-regl-proj{
@@ -69,6 +69,21 @@ input, select{
     color:#CDD0D2;
     font-size: 1.2em;
     box-shadow:  inset 5px 0px 30px  #00000040,  inset -5px 0px 30px  #ffffff40;
+}
+
+#nomNouvProj{
+    width: 100%;
+}
+#selectAct{
+    width:20%;
+}
+
+#nom_projet{
+    width: 65%;
+}
+
+#act_projet{
+    width: 25%;
 }
 
 .bouton-regl{

@@ -23,20 +23,20 @@
             <div class='dropdown'>
                 <h3>Activités :</h3>
                 <select name='activite' id='select-acti'>
-                    <option value='aucune'>Choisissez une activité</option>
-                    <option value='acti-choix1'>valeur 1</option>
-                    <option value='acti-choix2'>valeur 2</option>
-                    <option value='acti-choix3'>valeur 3</option>
+                <option value='0'>Choisissez une activité</option>
+                    {% for activite in activites %}
+                        <option value='{{activite.id_activite}}'> {{activite.nom_activite}}</option>
+                    {% endfor %}
                 </select>
             </div>
 
             <div class='dropdown'>
                 <h3>Projets :</h3>
                 <select name='projet' id='select-proj'>
-                    <option value='aucune'>Choisissez un projet</option>
-                    <option value='proj-valeur 1'>valeur 1</option>
-                    <option value='proj-valeur 2'>valeur 2</option>
-                    <option value='proj-valeur 3'>valeur 3</option>
+                    <option value='0'>Choisissez un projet</option>
+                    {% for projet in projets %}
+                        <option value='{{projet.id_projet}}'>{{projet.nom_projet}}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>

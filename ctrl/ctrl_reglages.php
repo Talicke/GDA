@@ -4,6 +4,12 @@
     include "./Model/model_note.php";
     include "./manager/manager_note.php";
 
+    include "./Model/model_activite.php";
+    include "./manager/manager_activite.php";
+
+    include "./Model/model_projet.php";
+    include "./manager/manager_projet.php";
+
     if(!isset($_GET['id'])){
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
         $data = $note->voirDerniereNote($bdd);
@@ -18,7 +24,11 @@
     $cat = $note->getIdCat();
     $contenuNote = $note->getContenuNote();
 
-    
+    $act = new ManagerActivite (null, null, $_SESSION['id'],null);
+    $activites = $act->voirToutActiviteParCompte($bdd);
+
+    $proj = new ManagerProjet(null, $_SESSION['id'], null);
+    $projets = $proj->voirToutProjetParCompte($bdd);
 
     if(isset($_POST['regl-note'])){
         $note->changerCatNote($bdd, 1);

@@ -36,6 +36,8 @@ $contenuNote = $note->getContenuNote();
 
     echo $twig->render('reglageNote.html.twig', [
         'titre' => 'Reglage note',
-        'valueNote' => $contenuNote
+        'valueNote' => $contenuNote,
+        'activites' => $activites,
+        'projets' => $projets,
     ]);
 ?>

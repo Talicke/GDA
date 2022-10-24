@@ -31,7 +31,7 @@
                 WHERE activites.id_freq = frequences.id_freq 
                 AND id_compte = ?');
 
-                $req->bindParam(1, $compte, PDO::PARAM_STR);
+                $req->bindParam(1, $compte, PDO::PARAM_INT);
 
                 $req->execute();
                 

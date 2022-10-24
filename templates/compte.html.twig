@@ -41,23 +41,46 @@
         </nav>
         <div id="newCat" class="valoriser">
         <form action="" method="POST">
-            <div class="flex-row valoriser-bleu">
-                <input type='text' name='nomActivite' id='nom_acti_form' placeholder='Créez une nouvelle activité'>
-                <input type='text' name='tempsActivite' id='temps_acti_form' placeholder='En heure'>
-                <select name='selectFreq' id='selectFreq'>
-                    {% for freq in freqs %}
-                        <option value= "{{freq.id_freq}}">{{ freq.intituler_freq }}</option>
-                    {% endfor %}
-                </select>
-                <button type='submit' name='nouvActi' id="nouvActi">+</button>
-            </div>
-            {% for activite in activites %}
+
+            {% if showActivite %}
                 <div class="flex-row valoriser-bleu">
-                    <p class="valoriser-gris" id="nom_acti">{{activite.nom_activite}}</p>
-                    <p class="valoriser-gris" id="temps_acti">{{activite.temps_activite}}h</p>
-                    <p class="valoriser-gris" id="freq_acti">{{activite.intituler_freq}}</p>
+                    <input type='text' name='nomActivite' id='nom_acti_form' placeholder='Créez une nouvelle activité'>
+                    <input type='text' name='tempsActivite' id='temps_acti_form' placeholder='En heure'>
+                    <select name='selectFreq' id='selectFreq'>
+                        {% for freq in freqs %}
+                            <option value= "{{freq.id_freq}}">{{ freq.intituler_freq }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type='submit' name='nouvActi' id="nouvActi">+</button>
                 </div>
-            {% endfor %}
+                {% for activite in activites %}
+                    <div class="flex-row valoriser-bleu">
+                        <p class="valoriser-gris" id="nom_acti">{{activite.nom_activite}}</p>
+                        <p class="valoriser-gris" id="temps_acti">{{activite.temps_activite}}h</p>
+                        <p class="valoriser-gris" id="freq_acti">{{activite.intituler_freq}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% if showProjet %}
+                {% for projet in projets %}
+                    <div class="flex-row valoriser-bleu">
+                        <p class="valoriser-gris" id="nom_projet">{{projet.nom_projet}}</p>
+                        <p class="valoriser-gris" id="act_projet">{{projet.nom_activite}}</p>
+                    </div>
+                {% endfor %}
+                <div class="flex-row valoriser-bleu">
+                    {{mac.input('nomNouvProj', null, 'text')}}
+                    <select name='selectAct' id='selectAct'>
+                        <option value="0">Aucun</option>
+                        {% for activite in activites %}
+                            <option value= "{{activite.id_activite}}">{{ activite.nom_activite }}</option>
+                        {% endfor %}
+                    </select>
+                    <button type="submit" name="nouvProj" id="nouvProj">+</button>
+                <div>
+
+            {% endif %}
             
         </form>
     </div>
