@@ -17,10 +17,11 @@
     height: 90%;
 }
 
+
 #validation{
     width: 80%;
-    height: 10%;
+    height: 20%;
     margin: auto;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-end;
 }

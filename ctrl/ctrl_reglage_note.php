@@ -30,6 +30,8 @@ $contenuNote = $note->getContenuNote();
     if(isset($_POST['valider'])){
         // var_dump($note);
         $note->setContenuNote($_POST['modifNote']);
+        $note->setIdActivite($_POST['activite']);
+        $note->setIdProjet($_POST['projet']);
         $note->modifierNote($bdd);
         echo "modification note enregistré !";
     }
@@ -39,5 +41,6 @@ $contenuNote = $note->getContenuNote();
         'valueNote' => $contenuNote,
         'activites' => $activites,
         'projets' => $projets,
+        'selectedActi' => $selectedActi
     ]);
 ?>

@@ -30,6 +30,14 @@
     $proj = new ManagerProjet(null, $_SESSION['id'], null);
     $projets = $proj->voirToutProjetParCompte($bdd);
 
+    if($note->getIdActivite() != null){
+        $actiOfNote = new ManagerActivite(null, null, $_SESSION['id'], null);
+        $actiOfNote->setIdActivite($note->getIdActivite());
+        $retour = $actiOfNote->voirActiviteParId($bdd);
+        $actiOfNote->setNomActivite($retour->nom_activite);
+        $selectedActi= $actiOfNote->getNomActivite();
+    }
+
     if(isset($_POST['regl-note'])){
         $note->changerCatNote($bdd, 1);
         include './ctrl/ctrl_reglage_note.php';
@@ -57,9 +65,14 @@
                 include './ctrl/ctrl_reglage_RDV.php';
                 break;
         }
+    };
+
+    if(isset($_POST["projet"])){
+        echo "Un projet et séléctionner !";
     }
 
-    // echo '<button type="submit" name="valider" class="submit-button">Valider</button>';
-    // echo '</form>'; 
+    
+
+
 
 ?>

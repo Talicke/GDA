@@ -17,36 +17,45 @@
     {% endblock navireglage %}
 
     {% block triage %}
-    
-    <div id="form-haut" class="flex-row">
-        <div id="dropdown-group" class="flex-row">
-            <div class='dropdown'>
-                <h3>Activités :</h3>
-                <select name='activite' id='select-acti'>
-                <option value='0'>Choisissez une activité</option>
-                    {% for activite in activites %}
-                        <option value='{{activite.id_activite}}'> {{activite.nom_activite}}</option>
-                    {% endfor %}
-                </select>
+        <div id="form-haut" class="flex-row">
+            <div id="dropdown-group" class="flex-row">
+                <div class='dropdown'>
+                    <h3>Activités :</h3>
+                    <select name='activite' id='select-acti'>
+                    <option value='0'>Choisissez une activité</option>
+                        {% for activite in activites %}
+                            <option id="{{activite.nom_activite}}" value='{{activite.id_activite}}'> {{activite.nom_activite}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class='dropdown'>
+                    <h3>Projets :</h3>
+                    <select name='projet' id='select-proj'>
+                        <option value='0'>Choisissez un projet</option>
+                        {% for projet in projets %}
+                            <option id="{{projet.nom_projet}}" value='{{projet.id_projet}}'>{{projet.nom_projet}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
             </div>
 
-            <div class='dropdown'>
-                <h3>Projets :</h3>
-                <select name='projet' id='select-proj'>
-                    <option value='0'>Choisissez un projet</option>
-                    {% for projet in projets %}
-                        <option value='{{projet.id_projet}}'>{{projet.nom_projet}}</option>
-                    {% endfor %}
-                </select>
+            <div id="bouton-group" class="flex-row">
+                <button type="submit" class="btn-med" id="btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
+                <button type="submit" class="btn-med" id="btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
-
-        <div id="bouton-group" class="flex-row">
-            <button type="submit" class="btn-med" id="btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
-            <button type="submit" class="btn-med" id="btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
-        </div>
-    </div>
     {% endblock triage %}
 
+    {% block script %}
+    {{parent()}}
+        <script src="./asset/script/selecteOption.js"></script>
+        <script>
+            selectedActi('#{{selectedActi}}');
+        </script>
+    {% endblock script %}
+
+    
     
 {% endblock content %}
+        

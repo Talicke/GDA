@@ -42,5 +42,23 @@
                 die('Erreur '.$e->getMessage());
             }
         }
+
+        public function voirActiviteParId($bdd):object{
+            try{
+                $id = $this->getIdActivite();
+                $req = $bdd->prepare('SELECT nom_activite
+                FROM activites
+                WHERE id_activite = ?');
+
+                $req->bindParam(1, $id, PDO::PARAM_INT);
+
+                $req->execute();
+
+                $data = $req->fetch(PDO::FETCH_OBJ);
+                return $data;
+            } catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
     }
 ?>
