@@ -37,15 +37,10 @@
         $showActivite = true;
         $showProjet = false;
     }
-    
     else if(isset($_POST['regl-proj'])){
-        // include './ctrl/ctrl_gest_proj.php';
         $showActivite = false;
         $showProjet = true;
     }
-    // else{
-    //     include './ctrl/ctrl_gest_act.php';
-    // }
 
     echo $twig->render('compte.html.twig', [
         'titre' => 'Mon compte',

@@ -1,3 +1,13 @@
 <?php
-    echo "ctrl_liste_note";
+
+
+
+    echo $twig->render('liste_note.html.twig', [
+        'titre' => 'Inscription',
+        'inscription' => $inscription,
+        'message' => $message
+    ]);
+
+
+
 ?>

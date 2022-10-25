@@ -87,7 +87,7 @@
     }
 
     if(isset($_POST['compte'])){
-        header('Location: ./compte');
+        header('location: /compte');
     }
 
     if(isset($_POST['activites'])){

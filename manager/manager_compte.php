@@ -74,7 +74,7 @@
             }
         }
 
-        public function envoyerMail($login_smtp, $mdp_smtp, $objet, $texte){
+        public function envoyerMail($login_smtp, $mdp_smtp, $mail, $objet, $texte){
             require 'vendor/autoload.php';
 
             //Create an instance; passing `true` enables exceptions
@@ -93,7 +93,7 @@
             
                 //Recipients
                 $mail->setFrom( $login_smtp, 'GDA');
-                $mail->addAddress($this->getMailCompte(), $this->getMailCompte());     //Add a recipient
+                $mail->addAddress($mail, $mail);     //Add a recipient
         
             
                 //Content
