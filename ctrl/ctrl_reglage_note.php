@@ -41,6 +41,7 @@ $contenuNote = $note->getContenuNote();
         'valueNote' => $contenuNote,
         'activites' => $activites,
         'projets' => $projets,
-        'selectedActi' => $selectedActi
+        'selectedActi' => $selectedActi,
+        'selectedProj' => $selectedProj
     ]);
 ?>

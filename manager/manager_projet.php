@@ -24,10 +24,9 @@
             try{
                 $compte = $this->getCompteProjet();
 
-                $req = $bdd->prepare('SELECT id_projet, nom_projet, nom_activite
-                FROM projets, activites
-                WHERE activites.id_activite = projets.id_activite
-                AND projets.id_compte = ?');
+                $req = $bdd->prepare('SELECT id_projet, nom_projet, id_activite
+                FROM projets
+                WHERE id_compte = ?');
 
                 $req->bindParam(1, $compte, PDO::PARAM_INT);
 
@@ -38,6 +37,24 @@
             }
             catch(Exception $e){
                 die('Erreur'.$e->getMessage());
+            }
+        }
+
+        public function voirProjetParId($bdd):object{
+            try{
+                $id = $this->getIdProjet();
+                $req = $bdd->prepare('SELECT nom_projet
+                FROM projets
+                WHERE id_projet = ?');
+
+                $req->bindParam(1, $id, PDO::PARAM_INT);
+
+                $req->execute();
+
+                $data = $req->fetch(PDO::FETCH_OBJ);
+                return $data;
+            } catch(Exception $e){
+                die('Erreur '.$e->getMessage());
             }
         }
     }

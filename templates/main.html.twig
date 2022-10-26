@@ -48,7 +48,7 @@
         </form>
     </nav>
 
-    {# <nav id="nav-princ"class="hidden-height">
+    <nav id="nav-princ"class="hidden-height">
         <form method="post" action="">
         <div id='nav-lat' class="flex-col">
             <div id="navbar-sup-collapse">
@@ -71,7 +71,7 @@
             </div>
         </form>
         
-    </nav> #}
+    </nav>
 
 {% endblock nav %}
 
@@ -80,12 +80,12 @@
 {% endblock content %}
 </div>
 
-{% block script %}
+{% block javascripts %}
     <script src="./asset/script/navbar.js"></script>
     <script>
         extendNav('#navbar-sup-collapse','#Mcompte','#extend-nav-sup','15vh', '50vh');
         extendNav('#navbar-down-collapse','#Mliste','#extend-nav-down','15vh', '60vh');
     </script>
-{% endblock script %}
+{% endblock javascripts %}
 
 {% endblock body %}

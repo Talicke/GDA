@@ -24,7 +24,7 @@
     $cat = $note->getIdCat();
     $contenuNote = $note->getContenuNote();
 
-    $act = new ManagerActivite (null, null, $_SESSION['id'],null);
+    $act = new ManagerActivite (null, null, $_SESSION['id'], null);
     $activites = $act->voirToutActiviteParCompte($bdd);
 
     $proj = new ManagerProjet(null, $_SESSION['id'], null);
@@ -35,7 +35,15 @@
         $actiOfNote->setIdActivite($note->getIdActivite());
         $retour = $actiOfNote->voirActiviteParId($bdd);
         $actiOfNote->setNomActivite($retour->nom_activite);
-        $selectedActi= $actiOfNote->getNomActivite();
+        $selectedActi= '#'.$actiOfNote->getNomActivite().'';
+    }
+
+    if($note->getIdProjet() != null){
+        $projOfNote = new ManagerProjet(null, null, $_SESSION['id'], null);
+        $projOfNote->setIdProjet($note->getIdProjet());
+        $retour = $projOfNote->voirProjetParId($bdd);
+        $projOfNote->setNomProjet($retour->nom_projet);
+        $selectedProj= '#'.$projOfNote->getNomProjet().'';
     }
 
     if(isset($_POST['regl-note'])){
@@ -66,10 +74,6 @@
                 break;
         }
     };
-
-    if(isset($_POST["projet"])){
-        echo "Un projet et séléctionner !";
-    }
 
     
 
