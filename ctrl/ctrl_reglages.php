@@ -10,6 +10,7 @@
     include "./Model/model_projet.php";
     include "./manager/manager_projet.php";
 
+    //recupération de la note
     if(!isset($_GET['id'])){
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
         $data = $note->voirDerniereNote($bdd);
@@ -21,7 +22,10 @@
         $note->setIdActivite($data->id_activite);
         $note->setIdProjet($data->id_projet);
     }
+
+
     $cat = $note->getIdCat();
+
     $contenuNote = $note->getContenuNote();
 
     $act = new ManagerActivite (null, null, $_SESSION['id'], null);
