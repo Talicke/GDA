@@ -34,7 +34,9 @@
     $proj = new ManagerProjet(null, $_SESSION['id'], null);
     $projets = $proj->voirToutProjetParCompte($bdd);
 
-    if($note->getIdActivite() != null){
+    if($note->getIdActivite() == null){
+        $selectedActi='';
+    }else{
         $actiOfNote = new ManagerActivite(null, null, $_SESSION['id'], null);
         $actiOfNote->setIdActivite($note->getIdActivite());
         $retour = $actiOfNote->voirActiviteParId($bdd);
@@ -42,7 +44,9 @@
         $selectedActi= '#'.$actiOfNote->getNomActivite().'';
     }
 
-    if($note->getIdProjet() != null){
+    if($note->getIdProjet() == null){
+        $selectedProj ="";
+    }else{
         $projOfNote = new ManagerProjet(null, null, $_SESSION['id'], null);
         $projOfNote->setIdProjet($note->getIdProjet());
         $retour = $projOfNote->voirProjetParId($bdd);
