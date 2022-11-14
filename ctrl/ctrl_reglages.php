@@ -13,8 +13,19 @@
     //recupération de la note
     if(!isset($_GET['id'])){
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
-        $data = $note->voirDerniereNote($bdd);
+        $data = $note->voirDerniereNoteDuCompte($bdd);
         $note->setIdNote($data->id_note);
+        $note->setContenuNote($data->contenu_note);
+        $note->setDateNote($data->date_note);
+        $note->setEstTerminer($data->estTerminer);
+        $note->setIdCat($data->id_cat);
+        $note->setIdActivite($data->id_activite);
+        $note->setIdProjet($data->id_projet);
+    }else if(isset($_GET['id'])){
+        $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
+        $note->setIdNote($_GET['id']);
+        $data = $note->voirNoteDuCompteParId($bdd);
+
         $note->setContenuNote($data->contenu_note);
         $note->setDateNote($data->date_note);
         $note->setEstTerminer($data->estTerminer);
@@ -23,6 +34,7 @@
         $note->setIdProjet($data->id_projet);
     }
 
+    // var_dump($note);
 
     $cat = $note->getIdCat();
 
@@ -84,7 +96,6 @@
     };
 
     
-
 
 
 ?>

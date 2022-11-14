@@ -65,7 +65,7 @@
             }
         }
 
-        function voirDerniereNote($bdd){
+        function voirDerniereNoteDuCompte($bdd){
             try{
                 $compte = $this->getIdCompte();
 
@@ -75,6 +75,25 @@
                 $req->execute();
 
                 $data = $req -> fetch(PDO::FETCH_OBJ);
+                return $data;
+            }
+            catch(Exception $e){
+                die('Erreur '.$e->getMessage());
+            }
+        }
+
+        function voirNoteDuCompteParId($bdd){
+            try{
+                $compte = $this->getIdCompte();
+                $id = $this->getIdNote();
+
+                $req = $bdd->prepare('SELECT contenu_note, date_note, estTerminer, id_cat, id_activite, id_projet FROM notes WHERE id_compte = ? AND id_note = ?');
+
+                $req->bindparam(1, $compte, PDO::PARAM_INT);
+                $req->bindparam(2, $id, PDO::PARAM_INT);
+
+                $req->execute();
+                $data = $req->fetch(PDO::FETCH_OBJ);
                 return $data;
             }
             catch(Exception $e){
