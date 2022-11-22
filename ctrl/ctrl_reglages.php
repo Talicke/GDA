@@ -12,7 +12,9 @@
 
     //recupération de la note
     if(!isset($_GET['id'])){
+
         $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
+        
         $data = $note->voirDerniereNoteDuCompte($bdd);
         $note->setIdNote($data->id_note);
         $note->setContenuNote($data->contenu_note);
