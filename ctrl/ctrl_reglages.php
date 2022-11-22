@@ -11,7 +11,9 @@
     include "./manager/manager_projet.php";
 
     //recupération de la note
+
     $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
+
     if(!isset($_GET['id'])){
         $data = $note->voirDerniereNoteDuCompte($bdd);
         $note->setIdNote($data->id_note);
@@ -39,9 +41,11 @@
     $contenuNote = $note->getContenuNote();
 
     $act = new ManagerActivite (null, null, $_SESSION['id'], null);
+
     $activites = $act->voirToutActiviteParCompte($bdd);
 
     $proj = new ManagerProjet(null, $_SESSION['id'], null);
+    
     $projets = $proj->voirToutProjetParCompte($bdd);
 
     if($note->getIdActivite() == null){

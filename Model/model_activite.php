@@ -13,6 +13,8 @@
             $this->id_compte = $compte;
             $this->id_frequence = $frequence;
         }
+
+        
         // GETTER
         public function getIdActivite():?int{
             return $this->id_activite;

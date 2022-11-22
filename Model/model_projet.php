@@ -11,6 +11,7 @@
             $this->id_compte = $compte;
             $this->id_activite = $activite;
         }
+        
         // GETTER
         public function getIdProjet():?int{
             return $this->id_projet;
