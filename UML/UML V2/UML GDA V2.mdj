@@ -61696,7 +61696,7 @@
 															"left": 1530,
 															"top": 1199,
 															"width": 145.9326171875,
-															"height": 26,
+															"height": 13,
 															"text": "Execution de la requête",
 															"wordWrap": true
 														},
@@ -61732,7 +61732,7 @@
 													"left": 1525,
 													"top": 1192,
 													"width": 155.9326171875,
-													"height": 38,
+													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYRcTZym6Fl4="
 													},
@@ -65085,7 +65085,7 @@
 															"left": 893,
 															"top": 3007,
 															"width": 198.833984375,
-															"height": 26,
+															"height": 13,
 															"text": "Création d'un objet type Activité",
 															"wordWrap": true
 														},
@@ -65121,7 +65121,7 @@
 													"left": 888,
 													"top": 3000,
 													"width": 208.833984375,
-													"height": 38,
+													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYVU+yy6AHFI="
 													},
@@ -69152,7 +69152,7 @@
 															"left": 232,
 															"top": 815,
 															"width": 174.8525390625,
-															"height": 39,
+															"height": 26,
 															"text": "Afficher la liste des activités dans un menu déroulant",
 															"wordWrap": true
 														},
@@ -69188,7 +69188,7 @@
 													"left": 227,
 													"top": 808,
 													"width": 184.8525390625,
-													"height": 51,
+													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYQyv8ShlfwU="
 													},
@@ -69811,7 +69811,7 @@
 															"left": 249,
 															"top": 1527,
 															"width": 140.14990234375,
-															"height": 39,
+															"height": 26,
 															"text": "Afficher la liste projets dans un menu déroulant",
 															"wordWrap": true
 														},
@@ -69847,7 +69847,7 @@
 													"left": 244,
 													"top": 1520,
 													"width": 150.14990234375,
-													"height": 51,
+													"height": 38,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYRsIjCpbBok="
 													},
@@ -70256,7 +70256,7 @@
 															"left": 229,
 															"top": 2599,
 															"width": 180.095703125,
-															"height": 26,
+															"height": 13,
 															"text": "Afficher un message d'erreur",
 															"wordWrap": true
 														},
@@ -70292,7 +70292,7 @@
 													"left": 224,
 													"top": 2592,
 													"width": 190.095703125,
-													"height": 38,
+													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYU3NOC22oUg="
 													},
@@ -70951,7 +70951,7 @@
 															"left": 896,
 															"top": 4079,
 															"width": 191.36279296875,
-															"height": 26,
+															"height": 13,
 															"text": "Création d'un objet Type Projet",
 															"wordWrap": true
 														},
@@ -70987,7 +70987,7 @@
 													"left": 891,
 													"top": 4072,
 													"width": 201.36279296875,
-													"height": 38,
+													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYbdmBjDFXwY="
 													},
@@ -71058,7 +71058,7 @@
 															"left": 543,
 															"top": 4159,
 															"width": 223.93896484375,
-															"height": 26,
+															"height": 13,
 															"text": "Appel de la méthode voirProjetParId",
 															"wordWrap": true
 														},
@@ -71094,7 +71094,7 @@
 													"left": 538,
 													"top": 4152,
 													"width": 233.93896484375,
-													"height": 38,
+													"height": 25,
 													"stereotypeLabel": {
 														"$ref": "AAAAAAGEYbfWeDDhHAg="
 													},
@@ -73395,9 +73395,9 @@
 																"$ref": "AAAAAAF+oPo07gxS0qg="
 															},
 															"font": "Arial;13;0",
-															"left": 32.72998046875,
+															"left": 30.55908203125,
 															"top": 13,
-															"width": 123.8525390625,
+															"width": 109.6591796875,
 															"height": 13,
 															"text": "SeqD Créer une note"
 														},
@@ -73410,7 +73410,7 @@
 															"font": "Arial;13;1",
 															"left": 13,
 															"top": 13,
-															"width": 14.72998046875,
+															"width": 12.55908203125,
 															"height": 13,
 															"text": "sd"
 														}
@@ -77739,16 +77739,16 @@
 															},
 															"font": "Arial;13;0",
 															"left": 1519,
-															"top": 1263,
+															"top": 1270,
 															"width": 321.59130859375,
-															"height": 26,
+															"height": 13,
 															"alpha": 1.5707958722494422,
 															"distance": 22,
 															"hostEdge": {
 																"$ref": "AAAAAAGEhdfJph/BX8M="
 															},
 															"edgePosition": 1,
-															"text": "22 : Requête pour voir une note  par son id et le compte",
+															"text": "22 : Requête pour voir une note par son id et le compte",
 															"wordWrap": true
 														},
 														{
@@ -80515,7 +80515,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 24,
-													"top": 3032,
+													"top": 3048,
 													"width": 297,
 													"height": 65,
 													"text": "Scénario d'erreur 7.1 / 15.1 / 24.1 / 32.1 / 42.1.: \nla requête renvoie une erreur SQL, le système l'affiche et met fin au scénario."
@@ -80924,7 +80924,7 @@
 											"_parent": {
 												"$ref": "AAAAAAGEhRFEAy9yUS4="
 											},
-											"name": "Requête pour voir une note  par son id et le compte",
+											"name": "Requête pour voir une note par son id et le compte",
 											"source": {
 												"$ref": "AAAAAAGEhRKk7zCmByQ="
 											},
