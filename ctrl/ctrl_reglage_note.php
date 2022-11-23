@@ -44,4 +44,5 @@ $contenuNote = $note->getContenuNote();
         'selectedActi' => $selectedActi,
         'selectedProj' => $selectedProj
     ]);
+    
 ?>

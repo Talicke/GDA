@@ -24,7 +24,9 @@
                     <select name='activite' id='select-acti'>
                     <option value='0'>Choisissez une activité</option>
                         {% for activite in activites %}
-                            <option id="{{activite.nom_activite}}" class="activiteDropDown" value='{{activite.id_activite}}'> {{activite.nom_activite}}</option>
+                            <option id="{{activite.nom_activite}}" class="activiteDropDown" 
+                            value='{{activite.id_activite}}'>
+                            {{activite.nom_activite}}</option>
                         {% endfor %}
                     </select>
                 </div>
@@ -34,15 +36,19 @@
                     <select name='projet' id='select-proj'>
                         <option value='0'>Choisissez un projet</option>
                         {% for projet in projets %}
-                            <option id="{{projet.nom_projet}}" class="ProjetDropDown" value='{{projet.id_projet}}' idActivite="{{projet.id_activite}}">{{projet.nom_projet}}</option>
+                            <option id="{{projet.nom_projet}}" class="ProjetDropDown" 
+                            value='{{projet.id_projet}}'
+                            idActivite="{{projet.id_activite}}">{{projet.nom_projet}}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
 
             <div id="bouton-group" class="flex-row">
-                <button type="submit" class="btn-med" id="btn-archive" name="archiver"><i class="fa-solid fa-box-archive"></i></button>
-                <button type="submit" class="btn-med" id="btn-suppr" name="supprimer"><i class="fa-solid fa-trash-can"></i></button>
+                <button type="submit" class="btn-med" id="btn-archive" name="archiver">
+                <i class="fa-solid fa-box-archive"></i></button>
+                <button type="submit" class="btn-med" id="btn-suppr" name="supprimer">
+                <i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
     {% endblock triage %}
@@ -52,9 +58,9 @@
 
         <script>
             selectedOptionDropDown("{{selectedActi}}");
-            selectedOptionDropDown("{{selectedProj}}")
+            selectedOptionDropDown("{{selectedProj}}");
 
-            changeSelecte('#select-proj', '.activiteDropDown')
+            changeSelecte('#select-proj', '.activiteDropDown');
         </script>
         
     {% endblock javascripts %}
