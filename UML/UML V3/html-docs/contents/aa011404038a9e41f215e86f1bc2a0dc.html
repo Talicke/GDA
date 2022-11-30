@@ -213,23 +213,15 @@
         
         <li><a href='97121fff61635ece85ad43a161903bab.html'><span class='node-icon staruml-icon icon-UMLSendSignal'></span>Afficher un message d&#39;erreur</a></li>
         
-        <li><a href='186de5a0ce3e19389737546e1017ff29.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Appel de la méthode voirNoteDuCompteParId</a></li>
-        
         <li><a href='5c3cf23eb3dabf76b4e2968776214e1f.html'><span class='node-icon staruml-icon icon-UMLFlowFinalNode'></span>FlowFinalNode1</a></li>
         
         <li><a href='e82cf0e2f634b5fffa6a62f8b13dbe65.html'><span class='node-icon staruml-icon icon-UMLFlowFinalNode'></span>FlowFinalNode2</a></li>
         
-        <li><a href='c665ce3ae883b5dbe0ebc0238a522280.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Appel de la méthode VoirDerniereNoteDuCompte</a></li>
-        
         <li><a href='261fe3234bddcac682ce955d8997f5b7.html'><span class='node-icon staruml-icon icon-UMLMergeNode'></span>MergeNode2</a></li>
-        
-        <li><a href='82eef552b69d0c0aa5abee64be3e1d7e.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Vérification qu&#39;une Activité et enregistré dans la note</a></li>
         
         <li><a href='a3d93193fd87e8620cbb2af79116b03e.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Instanciation d&#39;un objet type Activité</a></li>
         
         <li><a href='8592586f15f64c07d12a95dca62d9e51.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Action1</a></li>
-        
-        <li><a href='e415bb60eb5d5af8e6a8a0e3d043f5eb.html'><span class='node-icon staruml-icon icon-UMLAction'></span>Sélection de l&#39;activité dans le menu déroulant correspondant à la note</a></li>
         
         <li><a href='ea7ccc6195fbb41ad3c88c9e82e82235.html'><span class='node-icon staruml-icon icon-UMLDecisionNode'></span>DecisionNode4</a></li>
         
@@ -238,6 +230,8 @@
         <li><a href='d90cd1d290800fbf529024c488e32a5c.html'><span class='node-icon staruml-icon icon-UMLDecisionNode'></span>DecisionNode5</a></li>
         
         <li><a href='77a5799d17f2e6d723b8a5d5285ae1c7.html'><span class='node-icon staruml-icon icon-UMLFlowFinalNode'></span>FlowFinalNode3</a></li>
+        
+        <li><a href='b1ffe4574708288e0d59d10bf461a052.html'><span class='node-icon staruml-icon icon-UMLFlowFinalNode'></span>FlowFinalNode5</a></li>
         
     </ul>
 </section>
@@ -294,9 +288,9 @@
         
         <li><a href='6d536e9407f3b2c49899633b963164d0.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Afficher la liste projets dans un menu déroulant→Instanciation d&#39;un objet type note)</a></li>
         
-        <li><a href='8969eff735274a538184d483010c5944.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Instanciation d&#39;un objet type note→Création d&#39;un objet type note)</a></li>
+        <li><a href='8969eff735274a538184d483010c5944.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Instanciation d&#39;un objet type note→appel du construteur note)</a></li>
         
-        <li><a href='5e6d9ef6156b5fd6899adb57f1438164.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Création d&#39;un objet type note→Vérification de la présence d&#39;un ID dans la super global GET)</a></li>
+        <li><a href='5e6d9ef6156b5fd6899adb57f1438164.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(appel du construteur note→Vérification de la présence d&#39;un ID dans la super global GET)</a></li>
         
         <li><a href='de5a12c19147bc62d80ceaffff023a7a.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Vérification de la présence d&#39;un ID dans la super global GET→MergeNode1)</a></li>
         
@@ -390,19 +384,57 @@
         
         <li><a href='39434819bf9634874d2e258ba95f7afd.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(verifier que le retour n&#39;est pas null→DecisionNode5)</a></li>
         
-        <li><a href='0c5975cc22af87d785d32e422986a8c8.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>Non null (DecisionNode5→Sélection de l&#39;activité dans le menu déroulant correspondant à la note)</a></li>
+        <li><a href='0c5975cc22af87d785d32e422986a8c8.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>Non null (DecisionNode5→ForkNode1)</a></li>
         
         <li><a href='6b3e37f0bf6d2651f362007630f9aadd.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>null (DecisionNode5→Vérification qu&#39;un projet et enregistré dans la note)</a></li>
         
         <li><a href='4063b7f424c96695a98ac771293721da.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>catch (DecisionNode4→Afficher un message d&#39;erreur)</a></li>
         
-        <li><a href='94e456f34b1de882e6543b10a086fc39.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>Non null (DecisionNode6→Sélection du projet dans le menu déroulant correspondant à la note)</a></li>
+        <li><a href='94e456f34b1de882e6543b10a086fc39.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>Non null (DecisionNode6→ForkNode1)</a></li>
         
         <li><a href='b950f16f843cfc96ec3cc65e9c7d0d0f.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(vérifier que le retour bdd n&#39;est pas null→DecisionNode6)</a></li>
         
         <li><a href='e5af400ef00e88e1f4760bae58b0fdd9.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>null (DecisionNode6→Affichage du contenu de la note)</a></li>
         
         <li><a href='e11f627bfeca21e9494bc8906c0da003.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Afficher un message d&#39;erreur→FlowFinalNode3)</a></li>
+        
+        <li><a href='73ca10fad491b207b8b806efdca920d8.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Voir les détails d&#39;une note→Appel de la méthode voirToutActiviteParCompte)</a></li>
+        
+        <li><a href='cb86ea786f5b4891649f1493daaadcbb.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Appel de la méthode voirToutActiviteParCompte→Afficher la liste des activités dans un menu déroulant)</a></li>
+        
+        <li><a href='9aea10d8be2ad12b8e7b51cf86e98008.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Afficher la liste des activités dans un menu déroulant→Appel de la méthode voirToutProjetParCompte)</a></li>
+        
+        <li><a href='75de74a451c388481dde5ace9ed67385.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Appel de la méthode voirToutProjetParCompte→Afficher la liste projets dans un menu déroulant)</a></li>
+        
+        <li><a href='0bc0d5698074724248c9ec165625f1fc.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Requête pour consulter une note par son id et le compte→Execution de la requête)</a></li>
+        
+        <li><a href='ae3d45a32a4c2794b9b5cccc3f3a4a96.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>oui (DecisionNode3→Appel de la méthode voirActiviteParId)</a></li>
+        
+        <li><a href='3c488964626d76694df280a8f62eea07.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Appel de la méthode voirActiviteParId→verifier que le retour n&#39;est pas null)</a></li>
+        
+        <li><a href='d2665973ced5a200db392344576b534d.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Appel de la méthode VoirDerniereNoteDuCompte→FlowFinalNode4)</a></li>
+        
+        <li><a href='cbb8399ef105c87a429e37efa56ea1a8.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>oui (DecisionNode3→Appel de la méthode voirProjetParId)</a></li>
+        
+        <li><a href='211fe4feb9708f0903b7cac904fe7a00.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Appel de la méthode voirProjetParId→vérifier que le retour bdd n&#39;est pas null)</a></li>
+        
+        <li><a href='d24dd20af6fc1310f88ec05f12a611ff.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Afficher la liste projets dans un menu déroulant→Instanciation d&#39;un objet type note)</a></li>
+        
+        <li><a href='784ba8e532c4b321bf72a7b96af24c68.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(ForkNode1→Vérification qu&#39;un projet et enregistré dans la note)</a></li>
+        
+        <li><a href='e74a9ed95d83284d4eff14fd5bc194bb.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(ForkNode1→Sélection de l&#39;activité dans le menu déroulant correspondant à la note)</a></li>
+        
+        <li><a href='7b5be85d26e407b538fd62a00894adae.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Sélection de l&#39;activité dans le menu déroulant correspondant à la note→FlowFinalNode5)</a></li>
+        
+        <li><a href='115441e55d91f90f061d8c696b569561.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(ForkNode1→Sélection du projet dans le menu déroulant correspondant à la note)</a></li>
+        
+        <li><a href='ddd6ea28db96611f933d1d4dd4a90ef1.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(ForkNode1→Affichage du contenu de la note)</a></li>
+        
+        <li><a href='6a26f0125ae78c0dc1cd231f1a19948f.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Sélection du projet dans le menu déroulant correspondant à la note→FlowFinalNode6)</a></li>
+        
+        <li><a href='5bad52af65dd225ce05e603ec97bafbd.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>(Afficher un message d&#39;erreur→FlowFinalNode3)</a></li>
+        
+        <li><a href='da3f4d7e841eaa3ff81094503efc13ef.html'><span class='node-icon staruml-icon icon-UMLControlFlow'></span>try (DecisionNode2→Vérification qu&#39;une Activité et enregistré dans la note)</a></li>
         
     </ul>
 </section>
