@@ -25,8 +25,11 @@
         $note->setIdActivite($data->id_activite);
         $note->setIdProjet($data->id_projet);
     }else if(isset($_GET['id'])){
+        
         $note->setIdNote($_GET['id']);
+
         $data = $note->voirNoteDuCompteParId($bdd);
+
         $note->setContenuNote($data->contenu_note);
         $note->setDateNote($data->date_note);
         $note->setEstTerminer($data->estTerminer);
