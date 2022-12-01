@@ -1,5 +1,7 @@
 <?php
     // include "./view/view_reglage.html";
+
+
     include "./utils/connecteBDD.php";
     include "./Model/model_note.php";
     include "./manager/manager_note.php";
@@ -23,12 +25,10 @@
         $note->setIdCat($data->id_cat);
         $note->setIdActivite($data->id_activite);
         $note->setIdProjet($data->id_projet);
-    }else if(isset($_GET['id'])){
         
+    }else if(isset($_GET['id'])){
         $note->setIdNote($_GET['id']);
-
         $data = $note->voirNoteDuCompteParId($bdd);
-
         $note->setContenuNote($data->contenu_note);
         $note->setDateNote($data->date_note);
         $note->setEstTerminer($data->estTerminer);
@@ -44,11 +44,9 @@
     $contenuNote = $note->getContenuNote();
 
     $act = new ManagerActivite (null, null, $_SESSION['id'], null);
-
     $activites = $act->voirToutActiviteParCompte($bdd);
 
     $proj = new ManagerProjet(null, $_SESSION['id'], null);
-    
     $projets = $proj->voirToutProjetParCompte($bdd);
 
     if($note->getIdActivite() == null){
