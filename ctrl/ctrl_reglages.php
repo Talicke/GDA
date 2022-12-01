@@ -15,6 +15,7 @@
     //recupération de la note
 
     $note = new ManagerNote(null, null, null, null, null, null, $_SESSION['id']);
+  
 
     if(!isset($_GET['id'])){
         $data = $note->voirDerniereNoteDuCompte($bdd);
@@ -37,7 +38,7 @@
         $note->setIdProjet($data->id_projet);
     }
 
-    // var_dump($note);
+
 
     $cat = $note->getIdCat();
 
