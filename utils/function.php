@@ -17,4 +17,6 @@ function voirDerniereNote($bdd, $id_compte){
 function netEntrer($input){
     return htmlspecialchars(strip_tags(trim($input)));
 }
+
+
 ?>

@@ -3,6 +3,7 @@
     class ManagerNote extends Note{
         
         public function ajoutNote($bdd):void{
+
             try{
                 $contenu = $this->getContenuNote();
                 $date = $this->getDateNote();
@@ -22,6 +23,7 @@
                 $req->bindparam(5, $activite, PDO::PARAM_INT);
                 $req->bindparam(6, $projet, PDO::PARAM_INT);
                 $req->bindparam(7, $compte, PDO::PARAM_INT);
+                
                 $req->execute();
             }
             catch(Exception $e){
@@ -65,7 +67,8 @@
             }
         }
 
-        function voirDerniereNoteDuCompte($bdd){
+        function voirDerniereNoteDuCompte($bdd):?stdClass{
+
             try{
                 $compte = $this->getIdCompte();
 
@@ -82,7 +85,8 @@
             }
         }
 
-        function voirNoteDuCompteParId($bdd){
+        function voirNoteDuCompteParId($bdd):?stdClass{
+            
             try{
                 $compte = $this->getIdCompte();
                 $id = $this->getIdNote();

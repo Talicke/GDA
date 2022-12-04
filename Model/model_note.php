@@ -9,7 +9,9 @@
         private ?int $id_projet;
         private ?int $id_compte;
 
-        public function __construct(?string $contenu, ?string $date, ?int $estTerminer, ?int $cat, ?int $activite, ?int $projet, ?int $compte){
+public function __construct(?string $contenu, ?string $date, ?int $estTerminer,
+                            ?int $cat, ?int $activite, ?int $projet, ?int $compte){
+
             $this -> contenu_note = $contenu;
             $this -> date_note = $date;
             $this -> estTerminer = $estTerminer;
@@ -20,6 +22,7 @@
         }
 
         //GETTER
+
         public function getIdNote():?int{
             return $this -> id_note;
         }
@@ -46,6 +49,7 @@
         }
 
         //SETTER
+        
         public function setIdNote($id):void{
             $this -> id_note = $id;
         }
